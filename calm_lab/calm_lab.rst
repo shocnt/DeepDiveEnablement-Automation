@@ -12,18 +12,18 @@ Calm演習
    .. figure:: images/lab1.png
 
 [IPAM_CLIENTサービス]
-Pre-Create - 何もしない
-Substrate Create - 既存の仮想マシン(10.42.10.56)に対してSSH接続
-Package Install - 何もしない
-Service Create - assign_ipaddress.shのシェルスクリプトを使用してIPアドレスとサブネットマスクを割り当て
-Service Start - 何もしない
+  - Pre-Create - 何もしない
+  - Substrate Create - 既存の仮想マシン(10.42.10.56)に対してSSH接続
+  - Package Install - 何もしない
+  - Service Create - assign_ipaddress.shのシェルスクリプトを使用してIPアドレスとサブネットマスクを割り当て
+  - Service Start - 何もしない
 
 [CENTOS_SERVICEサービス]
-Pre-Create - 何もしない
-Substrate Create - Nutanix AHV上に新規仮想マシン(vCPU:2, Core/vCPU:1, Memory:4GiB, Image: CentOS7)で作成、NICはPrimary(eth0)とCalm-Lab(eth1)の2つをアタッチし、eth1にIPAM_CLIENTから割当てられたIPアドレスとサブネットマスクを設定。
-Package Install - Docker、Calm DSLをインストール、(バグ混入)
-Service Create - 何もしない
-Service Start - Dockerサービスのenable確認、calm-dsl dockerコンテナの動作確認、(バグ混入確認)
+  - Pre-Create - 何もしない
+  - Substrate Create - Nutanix AHV上に新規仮想マシン(vCPU:2, Core/vCPU:1, Memory:4GiB, Image: CentOS7)で作成、NICはPrimary(eth0)とCalm-Lab(eth1)の2つをアタッチし、eth1にIPAM_CLIENTから割当てられたIPアドレスとサブネットマスクを設定。
+  - Package Install - Docker、Calm DSLをインストール、(バグ混入)
+  - Service Create - 何もしない
+  - Service Start - Dockerサービスのenable確認、calm-dsl dockerコンテナの動作確認、(バグ混入確認)
 
 アプリケーション起動のトラブルシューティング(マクロ編)
 ++++++++++++++++++++++++++
