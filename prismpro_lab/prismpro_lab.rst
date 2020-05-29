@@ -117,7 +117,7 @@ Prism Pro演習課題3: キャパシティ予測とX-Play
 
    .. figure:: images/cap8.png
 
-#. **保存して閉じる（Save & Close）** をクリックし、 “*Initials* - Automatically Generate Forecast Report” という名前で保存する。 ** ‘Enabled’ のトグルで有効にしてください。**
+#. **保存して閉じる（Save & Close）** をクリックし、 “*Initials* - Automatically Generate Forecast Report” という名前で保存する。 ** ‘Enabled’ のトグルで有効にしてください。** 
 
    .. figure:: images/cap9.png
 
@@ -191,7 +191,7 @@ Prism Pro演習課題5: VMライトサイジングとX-Play(ボーナス)
 
 非効率性の一部を解決するために自動化されたアクションを実行する方法を見てみましょう。このラボでは、このVMのメモリが制限されていると想定し、このVMの適切なサイズ設定を自動的に修正する方法を示します。また、カスタムチケットシステムを使用して、この典型的なワークフローがService Nowなどのチケットシステムとどのように統合できるかを考えます。
 
-#. VMリストから **_あなたのイニシャル_-LinuxToolsVM**を確認する。 以降の画面例では、 **ABC - VM** を利用します。
+#. VMリストから **_あなたのイニシャル_-LinuxToolsVM** を確認する。 以降の画面例では、 **ABC - VM** を利用します。
 
    .. figure:: images/rs1.png
 
@@ -219,7 +219,7 @@ Prism Pro演習課題5: VMライトサイジングとX-Play(ボーナス)
 
    .. figure:: images/rs18.png
 
-#. 演習準備で確認した**http://`<GTSPrismOpsLabUtilityServer_IP_ADDRESS>`/alerts**に移動する。 **VM Memory Constrained** のラジオボタンを選択し、 **_Initials_-LinuxToolsVM** を指定する。 **Simulate Alert** ボタンをクリックし、メモリ制約のアラートをシミュレートする。
+#. 演習準備で確認した **http://`<GTSPrismOpsLabUtilityServer_IP_ADDRESS>`/alerts** に移動する。 **VM Memory Constrained** のラジオボタンを選択し、 **_Initials_-LinuxToolsVM** を指定する。 **Simulate Alert** ボタンをクリックし、メモリ制約のアラートをシミュレートする。
 
    .. figure:: images/rs23.png
 
@@ -236,7 +236,7 @@ Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケ�
 
 非効率性の一部を解決するために自動化されたアクションを実行する方法を見てみましょう。このラボでは、このVMのメモリが制限されていると想定し、このVMの適切なサイズ設定を自動的に修正する方法を示します。また、カスタムチケットシステムを使用して、この典型的なワークフローがService Nowなどのチケットシステムとどのように統合できるかを考えます。
 
-#. VMリストから **_Initials_-LinuxToolsVM**を確認する。 以降の画面例では、 **ABC - VM** を利用します。
+#. VMリストから **_Initials_-LinuxToolsVM** を確認する。 以降の画面例では、 **ABC - VM** を利用します。
 
    .. figure:: images/rs1.png
 
@@ -343,7 +343,7 @@ Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケ�
 
    .. figure:: images/rs21.png
 
-#. **保存して閉じる（Save & Close）** をクリックし、名前は “*Initials* - Resolve Service Ticket” とする。 ** ‘Enabled’ トグルで有効化することを忘れないでください。**
+#. **保存して閉じる（Save & Close）** をクリックし、名前は “*Initials* - Resolve Service Ticket” とする。 ** ‘Enabled’ トグルで有効化することを忘れないでください。** 
 
    .. figure:: images/rs22.png
 

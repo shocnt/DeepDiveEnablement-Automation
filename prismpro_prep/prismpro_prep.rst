@@ -7,7 +7,7 @@ Prism Pro演習準備
 テスト用VMのプロビジョニング
 ++++++++++++++++++++++++++
 
-#. adminユーザでPrism Centralにログイン、**仮想マシンを作成**をクリックし、次のフィールドに入力して仮想マシンを作成して下さい。
+#. adminユーザでPrism Centralにログイン、 **仮想マシンを作成** をクリックし、次のフィールドに入力して仮想マシンを作成して下さい。
 
    - **Select a cluster to create the VM on.** - PHX-POCXXX
    - **Name** - ”あなたのイニシャル”-LinuxToolsVM
@@ -18,7 +18,7 @@ Prism Pro演習準備
    - **Disk** - "+ Add New Disk"-->”イメージサービスからクローン”-->"Linux-LinuxToolsVM.qcow2"
    - **Network** - ”Primary”ネットワークのみ接続済みでアタッチ
 
-#. **Save**をクリックし、作成される仮想マシンにチェックボックスが入った状態で**パワーオン**を実施。
+#. **Save** をクリックし、作成される仮想マシンにチェックボックスが入った状態で **パワーオン** を実施。
 
 GTSPrismOpsLabUtilityServerの準備
 ++++++++++++++++++++++++++
