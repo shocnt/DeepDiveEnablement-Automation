@@ -9,8 +9,10 @@
    prismpro_prep/prismpro_prep
    prismpro_lab/prismpro_lab
    calm_prep/calm_prep
-..   calm_lab/calm_lab
- 
+   calm_lab/calm_lab 
+
+.. _getting_started:
+
 ---------------
 はじめに
 ---------------
