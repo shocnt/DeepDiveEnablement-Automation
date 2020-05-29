@@ -105,15 +105,11 @@ Prism Pro演習課題3: キャパシティ予測とX-Play
 
    .. figure:: images/cap7.png
 
-#. 以下を入力する。
+#. 以下を入力する。独自の件名メッセージを作成してください。下記のような「パラメータ」を使用してメッセージを充実させることができます。
 
    - **Recipient:** - メールアドレスを入力
    - **Subject :** - ``Playbook {{playbook.playbook_name}} が実行されました``
    - **Message:** - `アラート {{trigger[0].alert_entity_info.name}}が発生し、プレイブック {{playbook.playbook_name}}が実行されました。レポートが添付されます。``
-
-   .. note::
-
-      独自の件名メッセージを作成してください。上記のような「パラメータ」を使用してメッセージを充実させることができます。
 
    .. figure:: images/cap8.png
 
