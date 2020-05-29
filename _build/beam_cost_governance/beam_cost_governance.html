@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Xi Beam - Cost Governance</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Enterprise Private Cloud</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dayinlife/dayinlife.html">A Day in the Life</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#configuring-storage">Configuring Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#provisioning-a-new-network">Provisioning a New Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#responding-to-vm-creation-requests">Responding to VM Creation Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#enabling-user-self-service">Enabling User Self Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#exploring-categories">Exploring Categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#exploring-roles">Exploring Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#exploring-projects">Exploring Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#staging-blueprints">Staging Blueprints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#developer-workflow">Developer Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#operator-workflows">Operator Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#using-entity-browser-search-and-analysis">Using Entity Browser, Search, and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#improved-life-cycle-management">Improved Life Cycle Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#prism-element-lcm-interactive-demo">5.11 Prism Element LCM Interactive Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#prism-central-lcm-interactive-demo">5.11 Prism Central LCM Interactive Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html">Prism Ops Capacity Runway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#capacity-planning-runway-monitoring">Capacity Planning Runway Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#capacity-planning-runway-analysis">Capacity Planning Runway Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#automate-capacity-forecast-report-generation-with-x-play">Automate Capacity Forecast Report Generation with X-Play</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html">Right-sizing VMs with Prism Ops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#inefficiency-detection-with-prism-ops-x-fit">Inefficiency Detection with Prism Ops X-FIT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#automatically-increase-constrained-vm-memory-with-x-play">Automatically Increase Constrained VM Memory with X-Play</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../security/security.html">Platform Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#working-with-nutanix-stigs">Working with Nutanix STIGS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../security/security.html#running-a-stig-report">Running a STIG Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../security/security.html#analyzing-the-stig-report">Analyzing the STIG Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../security/security.html#compromising-the-environment">Compromising the Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../security/security.html#example-1">Example 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../security/security.html#example-2">Example 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#software-based-encryption">Software Based Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#audit-logs">Audit Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#vm-secure-boot">VM Secure Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../files/files.html">Consolidating Storage with Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#managing-smb-shares">Managing SMB Shares</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#creating-the-share">Creating the Share</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#testing-the-share">Testing the Share</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#file-analytics">File Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#using-nfs-exports">Using NFS Exports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#enabling-nfs-protocol">Enabling NFS Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#creating-the-export">Creating the Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#testing-the-export">Testing the Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#multi-protocol-shares">Multi-Protocol Shares</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#configure-user-mappings">Configure User Mappings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#id1">Testing the Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html">Securing Applications with Flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#securing-the-fiesta-application">Securing the Fiesta Application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#defining-category-values">Defining Category Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#creating-a-security-policy">Creating a Security Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#assigning-category-values">Assigning Category Values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#monitoring-and-applying-a-security-policy">Monitoring and Applying a Security Policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#testing-the-application">Testing the Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#using-flow-visualization">Using Flow Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#applying-flow-policies">Applying Flow Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/windows_tools_vm.html">Windows Tools VM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/windows_tools_vm.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/windows_tools_vm.html#deploying-tools-vm">Deploying Tools VM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/linux_tools_vm.html">Linux Tools VM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#deploying-centos">Deploying CentOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#installing-tools">Installing Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#configuring-ntp">Configuring NTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#disabling-firewall-and-selinux">Disabling Firewall and SELinux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#installing-python">Installing Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/glossary.html#nutanix-core">Nutanix Core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#aos">AOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#pulse">Pulse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#prism-element">Prism Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#prism-central">Prism Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#node">Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#block">Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#storage-pool">Storage Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#storage-container">Storage Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#anatomy-of-a-read-i-o">Anatomy of a Read I/O</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#anatomy-of-a-write-i-o">Anatomy of a Write I/O</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/glossary.html#nutanix-flow">Nutanix flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#application-security-policy">Application Security Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#isolation-environment-policy">Isolation Environment Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#quarantine-policy">Quarantine Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#apptier">AppTier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#apptype">AppType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#environment">Environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Enterprise Private Cloud</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dayinlife/dayinlife.html">A Day in the Life</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html">Prism Ops Capacity Runway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html">Right-sizing VMs with Prism Ops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/security.html">Platform Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files/files.html">Consolidating Storage with Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html">Securing Applications with Flow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/windows_tools_vm.html">Windows Tools VM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/linux_tools_vm.html">Linux Tools VM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/glossary.html">Glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="cost-governance-with-xi-beam">
+<h1>Cost Governance with Xi Beam<a class="headerlink" href="#cost-governance-with-xi-beam" title="Permalink to this headline">¶</a></h1>
+<p>Xi Beam is a cost governance and security compliance service that works with both public clouds and Nutanix Private Cloud. This lab introduces Beam’s cost governance capabilities specifically for Nutanix.</p>
+<div class="figure">
+<img alt="../_images/beam_vm_costing.png" src="../_images/beam_vm_costing.png" />
+</div>
+<p>What is Cost Governance? It is a set of rules by which you measure your cloud consumption and implement cost control policies. Specifically for the Nutanix Private Cloud, Beam provides the following cost governance capabilities:</p>
+<ul class="simple">
+<li>Granular Cloud Metering: know how much it really costs to run VMs in your Nutanix Private Cloud</li>
+<li>Cost Center Reporting: tag-based automated reports to know how much a cost center is spending</li>
+<li>Chargeback &amp; Budgeting: drive accountability by allocating any untagged costs to appropriate cost centers and implement budget alerts</li>
+</ul>
+<p><strong>In this lab you will mimic a customer use case of identifying the true cost of running workloads on Nutanix Private Cloud across various users. By the end of the lab, you will learn:</strong></p>
+<ul class="simple">
+<li>How to use a TCO model to calculate the cost of Nutanix clusters and VMs</li>
+<li>How to use Prism categories to allocate those costs to a cost center for VM spend reporting</li>
+<li>How to implement Chargeback to ensure costs are allocated to appropriate cost centers</li>
+<li>How to set up alerts to be notified before costs exceed a certain budget</li>
+</ul>
+<div class="section" id="logging-in">
+<h2>Logging In<a class="headerlink" href="#logging-in" title="Permalink to this headline">¶</a></h2>
+<p>Beam is a SaaS service and does not require any on-premises installation for cost governance. To begin the lab, you will log into the Beam portal using pre-created credentials.</p>
+<ol class="arabic">
+<li><p class="first">In your browser, open <a class="reference external" href="https://beam.nutanix.com/">https://beam.nutanix.com/</a> and click <strong>Sign in with My Nutanix</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Login with your Company ID</strong> to login with a custom Identity Provider.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_01.png" src="../_images/beam_01.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Enter <strong>beam-lab&#64;nutanix.com</strong> as your <strong>Company email address</strong> and click <strong>Continue</strong>.</p>
+</li>
+<li><p class="first">Enter <strong>nutanix6-ad</strong> as your <strong>Unique ID</strong> and click <strong>Continue</strong>.</p>
+</li>
+<li><p class="first">Log in using the following credentials:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Username</strong> - Your <strong>Lab VPN Username</strong> in <span class="xref std std-ref">clusterassignments</span></li>
+<li><strong>Password</strong> - techX2020!</li>
+</ul>
+<div class="figure">
+<img alt="../_images/beam_01b.png" src="../_images/beam_01b.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Additional pre-requisites already configured for this lab include:</p>
+<ul class="last simple">
+<li>The Nutanix cluster being used must already be licensed in the Nutanix Salesforce database.</li>
+<li>Pulse must be enabled within Prism for your cluster, allowing Beam to receive configuration and utilization details of VMs running on the cluster.</li>
+</ul>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">If this is your first time accessing the Beam lab, you may see two popup messages explaining how Beam calculates the cost data for Nutanix products. Review and dismiss the messages to proceed to the Beam Cost Governance portal.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_02.png" src="../_images/beam_02.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="private-cloud-cost-metering">
+<h2>Private Cloud Cost Metering<a class="headerlink" href="#private-cloud-cost-metering" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nutanix-account-configuration">
+<h3>Nutanix Account Configuration<a class="headerlink" href="#nutanix-account-configuration" title="Permalink to this headline">¶</a></h3>
+<p>In order to start using Beam, you will need to configure a customer’s Nutanix account with Beam by entering a license key associated with their purchase.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For the lab environment, the license key has already been entered.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">From the toolbar at the top of the portal, select <strong>Configure &gt; Nutanix Account</strong>.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_03.png" src="../_images/beam_03.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Observe the configured license key.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_04.png" src="../_images/beam_04.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="product-costs">
+<h3>Product Costs<a class="headerlink" href="#product-costs" title="Permalink to this headline">¶</a></h3>
+<p>The next step is to ensure Beam has accurate license cost data for all Nutanix products.</p>
+<ol class="arabic">
+<li><p class="first">From the toolbar at the top of the portal, select <strong>Configure &gt; Nutanix Cost Configuration</strong>.</p>
+<blockquote>
+<div><p>Once you’ve entered the license key, Beam populates the customer’s entire Nutanix purchase history from their Salesforce account. Beam automatically populates product costs based on assumed market price for all Nutanix products - hardware and software. The actual cost paid by customers may vary slightly depending on the final pricing from Nutanix resellers, which is unavailable to Beam.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Select <strong>Configure Cost</strong> to view how a customer can customize their exact costs for each purchase.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_05.png" src="../_images/beam_05.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Click <strong>X</strong> to close <strong>Cost Configurations</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="tco-configuration">
+<h3>TCO Configuration<a class="headerlink" href="#tco-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Beam uses a built-in <strong>total cost of ownership (TCO) model</strong> for Nutanix that provides out-of-the-box visibility into the true cost of running the Nutanix private cloud. These costs are eventually used to calculate granular VM level costs. It is important to configure the TCO model accurately so that you have more accurate VM costs.</p>
+<p>The TCO model includes several cost heads that are automatically populated depending on the number of Nutanix nodes and some industry standards that are built into the model. The out-of-the-box TCO calculations provide a good faith level of accuracy and can be further fine-tuned to customer specifics. Learn how to configure the TCO model:</p>
+<ol class="arabic">
+<li><p class="first">In <strong>Configure &gt; Nutanix Cost Configuration</strong>, select the <strong>Cluster</strong> tab, and search for cluster ID ending in <strong>4d3b</strong>.</p>
+</li>
+<li><p class="first">Click on <strong>Edit TCO</strong> next to that cluster.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_06.png" src="../_images/beam_06.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you do not see the <strong>Edit TCO</strong> option, click on <strong>Define Cluster Cost Allocation</strong> and ensure that Total Cost of Ownership is selected as the cost model.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Navigate through the various cost heads to familiarize yourself with them:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><strong>Hardware</strong></p>
+<blockquote>
+<div><p>Includes all Nutanix appliance costs which are automatically pulled from customer’s purchase history in salesforce. These costs are amortized on a monthly basis assuming a hardware life of 60 months.</p>
+<p>Any third-party hardware costs are added automatically as well. Average cost per third-party appliance is assumed to be $12,000. Memory costs for the whole cluster can be added manually if you know the monthly cost per GB of RAM.</p>
+<div class="figure">
+<img alt="../_images/beam_07.png" src="../_images/beam_07.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Software</strong></p>
+<blockquote>
+<div><p>Includes all Nutanix software license costs which are automatically pulled from customer’s purchase history in salesforce. Costs associated with any Nutanix nodes running vSphere are also automatically calculated assuming a vSphere license cost of $210/processor and 2 processors per node.</p>
+<p>Any additional software costs, such as a third-party application performance monitoring software cost can be added manually. All software costs are amortized on a monthly basis.</p>
+<div class="figure">
+<img alt="../_images/beam_08.png" src="../_images/beam_08.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Facilities</strong></p>
+<blockquote>
+<div><p>Includes power and cooling costs, and datacenter space costs for the datacenter used to run the Nutanix Private Cloud.</p>
+<p>The power and cooling costs are automatically calculated depending only on the number of Nutanix nodes. Amount of power consumed per node and a power usage effectiveness (PUE) ratio are built into the model. The TCO model assumes cost of power to be $0.1/kWh based on US standard. This cost can be configured depending on customer geography. Monthly power and cooling costs = Number of nodes * power consumed per node in kWh * cost per kWh * (number of hours in a month)*PUE.</p>
+<div class="figure">
+<img alt="../_images/beam_09.png" src="../_images/beam_09.png" />
+</div>
+<p>The datacenter space costs are also automatically calculated depending only on the number of Nutanix nodes. It is assumed that each node needs 2 rack units, there are 42 rack units per rack, and the average cost per rack is $1,400/month. Monthly datacenter space cost = {(Number of nodes * 2 rack units)/42 rack units per rack}*($1,400)</p>
+<div class="figure">
+<img alt="../_images/beam_10.png" src="../_images/beam_10.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Telecom</strong></p>
+<blockquote>
+<div><p>Includes Ethernet/top-of-rack switch costs that are automatically calculated depending only on number of nodes. The TCO model assumes each node uses 2 ports on a switch, there are 48 ports per TOR switch, and the cost of each TOR switch is $1,250 amortized on a per-month basis. Monthly telecom costs = {(Number of nodes*2 ports)/48 ports per switch}*($1,250)</p>
+<div class="figure">
+<img alt="../_images/beam_11.png" src="../_images/beam_11.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Services</strong></p>
+<blockquote>
+<div><p>This cost head includes any Nutanix or third-party services that you may have paid for. These costs are entered manually by the user and amortized to a monthly basis by TCO model.</p>
+<div class="figure">
+<img alt="../_images/beam_12.png" src="../_images/beam_12.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>People</strong></p>
+<blockquote>
+<div><p>This cost head includes the cost incurred on IT Admin salaries for the administrative staff employed to maintain your Nutanix Private Cloud. The TCO model assumes a salary of $150,000 for internal admins and $80,000 for external admins based on US standards. You can specify what % of your Nutanix nodes are outsourced to external admins and what is maintained by internal admins. Salary amounts can be configured too.</p>
+<div class="figure">
+<img alt="../_images/beam_13.png" src="../_images/beam_13.png" />
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>The power of the TCO model lies in being able to centralize all costs associated with a private cloud into one unified view and providing a good approximation of a customer’s private cloud costs without any configuration. At the same time, the TCO model is highly customizable and can also be configured separately for each cluster.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Close the TCO view.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="cluster-and-vm-costing">
+<h3>Cluster and VM Costing<a class="headerlink" href="#cluster-and-vm-costing" title="Permalink to this headline">¶</a></h3>
+<p>The next step is to allocate the cluster level costs to individual VMs running on the cluster. It is mandatory to have Prism Pulse enabled so that Beam has the data on VM state and resources allocated to each VM on that cluster.</p>
+<p>The total cluster level costs (calculated using the TCO model) are allocated to each VM depending on the number of hours that the VM is up and running and the capacity allocated to that VM relative to the overall capacity on the cluster. The CBL model is used to calculate cost per vCPU, cost per GB of storage and cost per GB of RAM. Those per unit costs are multiplied by the number of vCPUs, storage and memory allocated to each VM to get total VM costs. These costs are calculated out-of-the-box without needing any customer configuration.</p>
+<ol class="arabic">
+<li><p class="first">Click <strong>Go Back</strong> to access the Beam <strong>Dashboard</strong>.</p>
+</li>
+<li><p class="first">Select <strong>Analyze &gt; VM Costing</strong> and search for <strong>Cluster ID</strong> ending in <strong>4d3b</strong>.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_14.png" src="../_images/beam_14.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Click <strong>View Details</strong> to see the detailed TCO based cost breakdown for this cluster.</p>
+</li>
+<li><p class="first">Note that the cost of each individual VM running in this cluster has been automatically calculated. If the TCO model has been accurately configured, these costs represent the true cost of running that VM in the Nutanix Private Cloud.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_15.png" src="../_images/beam_15.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>This concludes the walkthrough of Beam’s cost metering capabilities for Nutanix Private Cloud.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It takes a few hours for VM costing data to show up after a Nutanix account is configured in Beam. The TCO model is baked into the product and VM costs will be calculated out-of-the-box using the default values of the TCO model. The model can be fine-tuned depending on customer need.</p>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="cost-center-reporting">
+<h2>Cost Center Reporting<a class="headerlink" href="#cost-center-reporting" title="Permalink to this headline">¶</a></h2>
+<p>Now that we know what individual VMs cost to run on Nutanix, we can create cost views that aggregate consumption across various VMs and clusters. This is done by leveraging Prism’s Categories as tags. Depending upon how Prism Categories are defined, these cost centers can help to track spending across various users, teams, applications, geographies, etc.</p>
+<div class="section" id="creating-a-cost-center">
+<h3>Creating a Cost Center<a class="headerlink" href="#creating-a-cost-center" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Navigate to the <strong>Global</strong> Organization view from the main menu and go to the <strong>Chargeback</strong> tab. You may notice some cost centers previously created by other users.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_16.png" src="../_images/beam_16.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Select <strong>Create</strong> then <strong>Cost Center</strong>.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_17.png" src="../_images/beam_17.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Provide a name for the cost center and click on <strong>Define Cost Center</strong>.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_18.png" src="../_images/beam_18.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to avoid conflicting work with another user, please start the name of your Cost Center with your initials. Example: XY-BeamLab</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Cloud</strong> - Nutanix</li>
+<li><strong>Parent Account</strong> - Nutanix Cost Demo Account</li>
+<li><strong>Sub Accounts</strong> - <em>Search for the Cluster ID ending in</em> 4d3b</li>
+<li><strong>Key Set</strong> - nx:App</li>
+<li><strong>Value Set</strong> - <em>Select any available</em> VDI### <em>value</em></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <em>###</em> will be a three-digit number. You may select any number between 001 to 080. This is being done to provide a unique key-value pair for each lab attendee because each key-value pair can only be in a unique cost center to avoid double counting of VM costs in different cost centers.</p>
+</div>
+<div class="figure">
+<img alt="../_images/beam_19.png" src="../_images/beam_19.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Select <strong>Save Filter</strong> to save the key-value pair used as a filter. You can add multiple key-value pairs to a cost center definition.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Each Key-Value pair can only be added to a unique Cost Center. If you get an error message when you define your Key-Value pair, it is likely because another user already added that Key-Value pair to their Cost Center. Please select a different Key-Value pair.</p>
+<div class="last figure">
+<img alt="../_images/beam_20.png" src="../_images/beam_20.png" />
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Select <strong>Save Definition</strong> to save the definition of the cost center, and <strong>Save Cost Center</strong> to exit the view and go back to the Chargeback screen.</p>
+<blockquote>
+<div><p>You have now created a cost center which will aggregate costs from all Nutanix VMs carrying the tag key <strong>App</strong> and tag value <strong>VDI</strong><em>###</em>. You may add further Prism Categories as filters to the cost center definition. For example you could add a <strong>Region</strong> Category as tag key and <strong>Europe</strong> or <strong>Asia</strong> as tag values as long as those are defined in Prism. This would allow you to create Cost Centers to track VM spending across different regions.</p>
+</div></blockquote>
+</li>
+<li><p class="first">(Optional) The cost center definition can be made to be truly multi-cloud. If your customer wants to extend their cost center definition to also include public cloud resource costs, that can be done in the same way by adding public cloud accounts and tag-key pairs to the same cost center definition. This is a very powerful capability of Beam immensely helping customers that use both public and private clouds by providing a unified view of all cloud resource costs in the same cost center.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_21.png" src="../_images/beam_21.png" />
+</div>
+<p>Some customers may want to have several cost centers reporting to a common parent entity. For example, you may want to track the costs separately for different dev and prod teams all reporting to the same Engineering department. You can do this in Beam by defining a Business Unit which is nothing but a combination of multiple cost centers. Each Cost Center can only belong to one Business Unit.</p>
+<div class="figure">
+<img alt="../_images/beam_22.png" src="../_images/beam_22.png" />
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="chargeback-budgeting">
+<h2>Chargeback &amp; Budgeting<a class="headerlink" href="#chargeback-budgeting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="chargeback-unallocated-spend">
+<h3>Chargeback Unallocated Spend<a class="headerlink" href="#chargeback-unallocated-spend" title="Permalink to this headline">¶</a></h3>
+<p>Not all VMs may be tagged with Category values that you specify in cost centers. Often times you will find that there will be spending that did not fit a cost center definition. These costs can be captured through <strong>Chargeback</strong>.</p>
+<ol class="arabic">
+<li><p class="first">Navigate to the <strong>Chargeback &gt; Unallocated</strong> spend view.</p>
+</li>
+<li><p class="first">Search for the cluster ID ending in <strong>4d3b</strong>.</p>
+</li>
+<li><p class="first">Click on <strong>View Details</strong> to see the details of spend on this cluster that did not get allocated to any cost center.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_23.png" src="../_images/beam_23.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">If you find any unallocated spend from some VMs, you can select <strong>Allocate</strong> and choose the cost center(s) that you want to allocate that spend to.</p>
+</li>
+<li><p class="first">You can also split the spend across multiple cost centers. Select the cost center you had created, <strong>XY-BeamLab</strong>, and allocate 100% of the spend of this VM to that cost center. You only need to do this once. Any future spending by the same VM will be automatically allocated to that cost center.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_24.png" src="../_images/beam_24.png" />
+</div>
+<p>This feature is extremely helpful to identify shadow spending outside of a customer’s cost center and business unit structure, and allows a financial admin to more accurately map cloud consumption to appropriate owners so that customers can be aware of who is responsible for spending in their cloud.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="budget-alerts">
+<h3>Budget Alerts<a class="headerlink" href="#budget-alerts" title="Permalink to this headline">¶</a></h3>
+<p>In this exercise you will define a budget for a cost center and set up a related alert.</p>
+<ol class="arabic">
+<li><p class="first">Navigate to the <strong>Budget</strong> tab and click on <strong>Create a Budget</strong>.</p>
+</li>
+<li><p class="first">Select <strong>Business Unit/Cost Center based Budget</strong> and click <strong>Next</strong>.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_25.png" src="../_images/beam_25.png" />
+</div>
+<p>Alternatively, Beam also allows you to create a custom resource group using a combination of accounts, services, and tags, and then set up budget alerts on the custom resource group.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Select the <strong>Cost Center</strong> you created in the previous exercise.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_26.png" src="../_images/beam_26.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Select <strong>Manual Allocation</strong>.</p>
+<blockquote>
+<div><p>This will allow you to customize values for the budget at an yearly, quarterly or monthly level.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Enter the annual budget to be $100,000. It will be allocated equally to each month.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_27.png" src="../_images/beam_27.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Finally, beside <strong>Quarterly Budget Alerts</strong>, click <strong>Create</strong>.</p>
+</li>
+<li><p class="first">Set a <strong>Threshold</strong> value of <strong>85%</strong> and click <strong>Save</strong>.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_28.png" src="../_images/beam_28.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Add your email address under <strong>Alert Notifications</strong> and click <strong>Save</strong>.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/beam_29.png" src="../_images/beam_29.png" />
+</div>
+<p>You have now created a budget alert to be notified when spending in your cost center goes above a certain threshold relative to your configured quarterly budget.</p>
+</div></blockquote>
+</li>
+</ol>
+<p>This completes the Private Cloud Cost Governance lab. You may log out of your Beam account.</p>
+</div>
+</div>
+<div class="section" id="takeaways">
+<h2>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Beam’s cost governance module helps you identify cost of VMs running on Nutanix, allocate them to cost centers, setup chargeback reports &amp; budget alerts.</li>
+<li>You can create multi-cloud cost centers using public cloud tags and Prism categories to track spending across both private and public clouds</li>
+<li>Nutanix costs can be configured using a highly customizable TCO model that helps you identify your true cost of running your private cloud</li>
+<li>Beam helps you keep your cloud spending in control and drives financial governance in a multi-cloud environment</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/beam_cost_governance/beam_cost_governance.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2020 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

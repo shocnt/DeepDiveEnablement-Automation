@@ -1,0 +1,986 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>A Day in the Life</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Prism Ops Capacity Runway" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html" />
+    <link rel="prev" title="Getting Started" href="../index.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Enterprise Private Cloud</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">A Day in the Life</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-storage">Configuring Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#provisioning-a-new-network">Provisioning a New Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#responding-to-vm-creation-requests">Responding to VM Creation Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-user-self-service">Enabling User Self Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exploring-categories">Exploring Categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exploring-roles">Exploring Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exploring-projects">Exploring Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#staging-blueprints">Staging Blueprints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#developer-workflow">Developer Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operator-workflows">Operator Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-entity-browser-search-and-analysis">Using Entity Browser, Search, and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#improved-life-cycle-management">Improved Life Cycle Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prism-element-lcm-interactive-demo">5.11 Prism Element LCM Interactive Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prism-central-lcm-interactive-demo">5.11 Prism Central LCM Interactive Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html">Prism Ops Capacity Runway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#capacity-planning-runway-monitoring">Capacity Planning Runway Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#capacity-planning-runway-analysis">Capacity Planning Runway Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#automate-capacity-forecast-report-generation-with-x-play">Automate Capacity Forecast Report Generation with X-Play</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html">Right-sizing VMs with Prism Ops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#inefficiency-detection-with-prism-ops-x-fit">Inefficiency Detection with Prism Ops X-FIT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#automatically-increase-constrained-vm-memory-with-x-play">Automatically Increase Constrained VM Memory with X-Play</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../security/security.html">Platform Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#working-with-nutanix-stigs">Working with Nutanix STIGS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../security/security.html#running-a-stig-report">Running a STIG Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../security/security.html#analyzing-the-stig-report">Analyzing the STIG Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../security/security.html#compromising-the-environment">Compromising the Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../security/security.html#example-1">Example 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../security/security.html#example-2">Example 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#software-based-encryption">Software Based Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#audit-logs">Audit Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#vm-secure-boot">VM Secure Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../files/files.html">Consolidating Storage with Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#managing-smb-shares">Managing SMB Shares</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#creating-the-share">Creating the Share</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#testing-the-share">Testing the Share</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#file-analytics">File Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#using-nfs-exports">Using NFS Exports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#enabling-nfs-protocol">Enabling NFS Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#creating-the-export">Creating the Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#testing-the-export">Testing the Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#multi-protocol-shares">Multi-Protocol Shares</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#configure-user-mappings">Configure User Mappings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#id1">Testing the Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html">Securing Applications with Flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#securing-the-fiesta-application">Securing the Fiesta Application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#defining-category-values">Defining Category Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#creating-a-security-policy">Creating a Security Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#assigning-category-values">Assigning Category Values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#monitoring-and-applying-a-security-policy">Monitoring and Applying a Security Policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#testing-the-application">Testing the Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#using-flow-visualization">Using Flow Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#applying-flow-policies">Applying Flow Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/windows_tools_vm.html">Windows Tools VM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/windows_tools_vm.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/windows_tools_vm.html#deploying-tools-vm">Deploying Tools VM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/linux_tools_vm.html">Linux Tools VM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#deploying-centos">Deploying CentOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#installing-tools">Installing Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#configuring-ntp">Configuring NTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#disabling-firewall-and-selinux">Disabling Firewall and SELinux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#installing-python">Installing Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/glossary.html#nutanix-core">Nutanix Core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#aos">AOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#pulse">Pulse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#prism-element">Prism Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#prism-central">Prism Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#node">Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#block">Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#storage-pool">Storage Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#storage-container">Storage Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#anatomy-of-a-read-i-o">Anatomy of a Read I/O</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#anatomy-of-a-write-i-o">Anatomy of a Write I/O</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/glossary.html#nutanix-flow">Nutanix flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#application-security-policy">Application Security Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#isolation-environment-policy">Isolation Environment Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#quarantine-policy">Quarantine Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#apptier">AppTier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#apptype">AppType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#environment">Environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Enterprise Private Cloud</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">A Day in the Life</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-storage">Configuring Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#provisioning-a-new-network">Provisioning a New Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#responding-to-vm-creation-requests">Responding to VM Creation Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-user-self-service">Enabling User Self Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exploring-categories">Exploring Categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exploring-roles">Exploring Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exploring-projects">Exploring Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#staging-blueprints">Staging Blueprints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#developer-workflow">Developer Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operator-workflows">Operator Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-entity-browser-search-and-analysis">Using Entity Browser, Search, and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#improved-life-cycle-management">Improved Life Cycle Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prism-element-lcm-interactive-demo">5.11 Prism Element LCM Interactive Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prism-central-lcm-interactive-demo">5.11 Prism Central LCM Interactive Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html">Prism Ops Capacity Runway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html">Right-sizing VMs with Prism Ops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/security.html">Platform Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files/files.html">Consolidating Storage with Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html">Securing Applications with Flow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/windows_tools_vm.html">Windows Tools VM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/linux_tools_vm.html">Linux Tools VM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/glossary.html">Glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="a-day-in-the-life">
+<span id="dayinlife"></span><h1>A Day in the Life<a class="headerlink" href="#a-day-in-the-life" title="Permalink to this headline">¶</a></h1>
+<p>In this lab you will follow a day in the life of Carol O’Kay, a 10 year veteran of administrating virtual environments on 3-tier architecture, who has recently deployed her first Nutanix cluster. The Nutanix cluster is being used for a mix of production IT workloads, and supporting the engineering efforts for her company’s primary application, an inventory management solution called Fiesta, used to support the company’s retail storefronts.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If there are multiple people utilizing the same Nutanix cluster to complete this lab, certain steps may have already been completed. If this occurs, just skip that particular step, and continue on with the lab after you’ve verified the step(s) was completed correctly.</p>
+</div>
+<div class="section" id="configuring-storage">
+<h2>Configuring Storage<a class="headerlink" href="#configuring-storage" title="Permalink to this headline">¶</a></h2>
+<p>In this brief exercise, you will experience how IT generalists can provision and monitor primary storage for their virtualized environment through Prism with just a few clicks - a stark contrast to planning and managing traditional SAN storage.</p>
+<ol class="arabic">
+<li><p class="first">Using your <strong>Cluster Assignment Spreadsheet</strong>, identify your <strong>Prism Element</strong> cluster IP.</p>
+</li>
+<li><p class="first">In a browser, open <strong>Prism Element</strong> and log in using the following local user credentials:</p>
+<ul class="simple">
+<li><strong>Username</strong> - admin</li>
+<li><strong>Password</strong> - <em>HPOC Password</em></li>
+</ul>
+<div class="figure">
+<img alt="../_images/1.png" src="../_images/1.png" />
+</div>
+</li>
+<li><p class="first">Select <strong>Storage</strong> from the drop down menu.</p>
+<div class="figure">
+<img alt="../_images/2.png" src="../_images/2.png" />
+</div>
+</li>
+<li><p class="first">Mouse over the <strong>Storage Summary</strong> and <strong>Capacity Optimization</strong> widgets for explanations of what each is displaying.</p>
+<p>It’s important to understand that Nutanix considers the <strong>Data Reduction</strong> ratio as savings ONLY from compression, deduplication, and erasure coding. The <strong>Overall Efficiency</strong>, comparable to what many other vendors consider “Data Reduction,” incorporates the aforementioned data efficiency features, as well as data avoidance features like thin provisioning, intelligent cloning, and zero suppression.</p>
+<div class="figure">
+<img alt="../_images/3.png" src="../_images/3.png" />
+</div>
+</li>
+<li><p class="first">Select <strong>Table</strong> and click <strong>+ Storage Container</strong>.</p>
+<p>Storage Containers represent logical policies for storage, allowing you to create reservations, enable/disable data efficiency features like compression, deduplication, and erasure coding, and to configure Redundancy Factor (RF). Every Storage Container on a Nutanix cluster still leverages all physical disks within the cluster, referred to as the Storage Pool. A typical Nutanix cluster will have a small number of Storage Containers, typically corresponding to workloads that benefit from different data efficiency technologies.</p>
+<div class="figure">
+<img alt="../_images/4.png" src="../_images/4.png" />
+</div>
+</li>
+<li><p class="first">Provide a unique <strong>Name</strong> for the <strong>Storage Container</strong>, and click <strong>Advanced Settings</strong> to explore additional configuration options.</p>
+<div class="figure">
+<img alt="../_images/5.png" src="../_images/5.png" />
+</div>
+<p>Nutanix provides different ways to optimize storage capacity that are intelligent and adaptive to workloads characteristics. Nutanix uses native data avoidance (thin provisioning, intelligent cloning and zero suppression) and data reduction (compression, deduplication, and erasure coding) techniques to handle data efficiently. All data reduction optimizations are performed at the container level, so different containers can use different settings.</p>
+<p><strong>Compression</strong></p>
+<blockquote>
+<div><p>Nutanix provides two choices - inline or post-process data compression. Irrespective of inline or post-process compression, write data coming into OpLog that is &gt;4k and shows good compression, will be written compressed in OpLog. For inline compression (Delay=0), sequential streams of data or large size I/Os (&gt;64K) will be compressed when writing to the Extent Store. For post-process (Delay &gt; 0), data is compressed after it is drained from OpLog to the Extent Store, after compression delay is met.</p>
+<p>Compression provides on-disk space savings for applications such as databases, and results in a lower number of writes being written to storage. Post-process compression is turned ON by default on all containers. Starting 5.18, inline compression will be turned ON by default on all containers. We recommend turning ON inline compression for almost all use cases. Workloads not ideal for compression are encrypted datasets or already compressed datasets.</p>
+</div></blockquote>
+<p><strong>Erasure Coding</strong></p>
+<blockquote>
+<div><p>To provide a balance between availability and the amount of storage required, Distributed Storage Fabric (DSF) provides the ability to encode data using erasure codes (EC). Like RAID (levels 4, 5, 6, etc.) where parity is calculated, EC encodes a strip of data blocks across different nodes and calculates parity. In the event of a host and/or disk failure, the parity data is used to calculate any missing data blocks (decoding).  In the case of DSF, the data block must be on a different node and belong to a different vDisk. EC is a post-process operation and is done on write cold data (Data that hasn’t been overwritten in more than 7 days). The number of data and parity blocks in a strip is chosen by the system based on number of nodes and configured failures to tolerate.</p>
+<p>Turn on EC-X for non-mission-critical workloads and workloads that have a significant amount of write cold data, since erasure coding works on write cold data and provides more usable storage. For more information refer to <a class="reference external" href="https://portal.nutanix.com/page/documents/solutions/list/">application specific best practice guides</a>.</p>
+</div></blockquote>
+<p><strong>Deduplication</strong></p>
+<blockquote>
+<div><p>When enabled, Distributed Storage Fabric (DSF) does capacity-tier and performance-tier deduplication. Data is fingerprinted on ingest using a SHA-1 hash that is stored as metadata. When duplicate data is detected based on multiple copies with the same fingerprint, a background process removes the duplicates. When deduplicated data is read, it is placed in a unified cache, and any subsequent requests for data with the same fingerprint are satisfied directly from cache.</p>
+<p>Deduplication is recommended for full clones, P2V migrations and Persistent Desktops.</p>
+</div></blockquote>
+<p><strong>Redundancy Factor</strong></p>
+<blockquote>
+<div><p>Redundancy Factor controls the number of data copies. Observe that the Redundancy Factor cannot be configured for this cluster, this is due to the minimum number of nodes required to support RF3 is 5.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>For more information on how Nutanix protects your data or implements data reduction, click the diagram below to review the relevant section of the Nutanix Bible.</p>
+<div class="last figure">
+<a class="reference external image-reference" href="https://nutanixbible.com/#anchor-book-of-acropolis-data-protection"><img alt="Nutanix Bible - Data Protection" src="https://nutanixbible.com/imagesv2/data_protection.png" /></a>
+</div>
+</div>
+</li>
+<li><p class="first">Click <strong>Save</strong> to create the storage and mount it to all available hosts within the cluster.</p>
+<p>In vSphere or Hyper-V environments, creating the Storage Container will also automate the process of mounting the storage to the hypervisor.</p>
+</li>
+<li><p class="first">Select an existing Storage Container, and review the individual savings from different data reduction/avoidance features, as well as the <strong>Effective Capacity</strong>, which is a projection of available storage based on the overall efficiency. These values are found in the <strong>Storage Container Details</strong> table.</p>
+<p>Unfortunately it is not possible to easily test data resiliency capabilities of the cluster in a shared environment, but the short video below will walk you through the experience from Prism when a node in the cluster is unexpectedly lost.</p>
+<center><iframe width="640" height="360" src="https://www.youtube.com/embed/hA4l1UHZO2w?rel=0&amp;showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></li>
+</ol>
+</div>
+<div class="section" id="provisioning-a-new-network">
+<h2>Provisioning a New Network<a class="headerlink" href="#provisioning-a-new-network" title="Permalink to this headline">¶</a></h2>
+<p>In this exercise Carol will use Prism to configure a new VM Network for the cluster.</p>
+<p>AHV leverages Open vSwitch (OVS) for all VM networking. OVS is an open source software switch implemented in the Linux kernel and designed to work in a multiserver virtualization environment. Each AHV server maintains an OVS instance, and all OVS instances combine to form a single logical switch. Each node is typically uplinked to a physical switch port trunked/tagged to multiple VLANs, which will be exposed as virtual networks.</p>
+<ol class="arabic">
+<li><p class="first">Select <strong>VM</strong> from the <strong>Prism Element</strong> drop down menu.</p>
+</li>
+<li><p class="first">Select <strong>Network Config</strong>.</p>
+<div class="figure">
+<img alt="../_images/9.png" src="../_images/9.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>+ Create Network</strong> and fill out the following fields, using the <strong>User</strong> specific network details in <span class="xref std std-ref">clusterassignments</span>:</p>
+<ul class="simple">
+<li><strong>Name</strong> - <em>Initials</em>-Network_IPAM</li>
+<li><strong>VLAN ID</strong> - A value (&lt; 4096) other than your <strong>Primary</strong> or <strong>Secondary</strong> network VLANs</li>
+<li>Select <strong>Enable IP Address Management</strong></li>
+<li><strong>Network IP Address / Prefix Length</strong> - 10.0.0.0/24</li>
+<li><strong>Gateway</strong> - 10.0.0.1</li>
+<li>Do not select <strong>Configure Domain Settings</strong></li>
+<li>Select <strong>+ Create Pool</strong></li>
+<li><strong>Start Address</strong> - 10.0.0.100</li>
+<li><strong>End Address</strong> - 10.0.0.150</li>
+<li>Click <strong>Submit</strong></li>
+</ul>
+<div class="figure">
+<img alt="../_images/network_config_03.png" src="../_images/network_config_03.png" />
+</div>
+<p>Note that AHV is capable of providing integrated DHCP services (IPAM), allowing virtualization administrators to allocate IPs to VMs from a configured pool, or easily specifying IPs as DHCP reservations when adding virtual NICs to VMs.</p>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+<p>The configured virtual network will now be available across all nodes within the cluster. Virtual networks in AHV behave like Distributed Virtual Switches in ESXi, meaning you do not need to configure the same settings on each individual host within the cluster.</p>
+</li>
+<li><p class="first">Close the <strong>Network Configuration</strong> window.</p>
+<p>You’re done - simple stuff!</p>
+</li>
+</ol>
+</div>
+<div class="section" id="responding-to-vm-creation-requests">
+<h2>Responding to VM Creation Requests<a class="headerlink" href="#responding-to-vm-creation-requests" title="Permalink to this headline">¶</a></h2>
+<p>Virtualization administrators are commonly tasked with deployment of new VMs. In this exercise, Carol walks through deployment of an AHV VM in Prism as a Nutanix administrator.</p>
+<ol class="arabic">
+<li><p class="first">Return to the <strong>VM</strong> page in <strong>Prism Element</strong> from the drop down menu.</p>
+</li>
+<li><p class="first">Click <strong>+ Create VM</strong>.</p>
+<div class="figure">
+<img alt="../_images/10.png" src="../_images/10.png" />
+</div>
+</li>
+<li><p class="first">Fill out the following fields to complete the user VM request:</p>
+<ul class="simple">
+<li><strong>Name</strong> - <em>Initials</em>-WinToolsVM</li>
+<li><strong>Description</strong> - Manually deployed Tools VM</li>
+<li><strong>vCPU(s)</strong> - 2</li>
+<li><strong>Number of Cores per vCPU</strong> - 1</li>
+<li><strong>Memory</strong> - 4 GiB</li>
+<li><dl class="first docutils">
+<dt>Select <strong>+ Add New Disk</strong></dt>
+<dd><ul class="first last">
+<li><strong>Type</strong> - DISK</li>
+<li><strong>Operation</strong> - Clone from Image Service</li>
+<li><strong>Image</strong> - WinToolsVM.qcow2</li>
+<li>Select <strong>Add</strong></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Select <strong>Add New NIC</strong></dt>
+<dd><ul class="first last">
+<li><strong>VLAN Name</strong> - Secondary</li>
+<li>Select <strong>Add</strong></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Similar to public cloud providers, Nutanix AHV provides an Image Service feature allows you to build a store of imported files that you can use to mount a CD-ROM device from an ISO image or an operating system Disk from a disk image when creating a VM. The Image Service supports raw, vhd, vhdx, vmdk, vdi, iso, and qcow2 disk formats.</p>
+<p>Note that the VM creation wizard also provides the ability to specify a Unattend.xml file for Windows Sysprep automation, or Cloud-Init file for Linux OS configuration.</p>
+</li>
+<li><p class="first">Click <strong>Save</strong> to create the VM.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Many VM operations, including VM creation can be scripted using the AHV CLI, <code class="docutils literal notranslate"><span class="pre">acli</span></code>. Certain features, such as Secure Boot and vNUMA can currently only be enabled for a VM through the command line. The ACLI Reference Guide can be found <a class="reference external" href="https://portal.nutanix.com/#/page/docs/details?targetId=Command-Ref-AOS-v5_16:acl-acli-vm-auto-r.html">here</a>.</p>
+<p class="last">You can SSH into any of your Nutanix CVMs and attempt creating an additional VM using <code class="docutils literal notranslate"><span class="pre">acli</span></code>.</p>
+</div>
+</li>
+<li><p class="first">Using the search field at the top of the table, filter for the requested VM. Select the VM and click <strong>Power On</strong> from the list of actions below the table.</p>
+<div class="figure">
+<img alt="../_images/12.png" src="../_images/12.png" />
+</div>
+</li>
+<li><p class="first">Once the VM has completed booting, note the <strong>IP Address</strong>.</p>
+<div class="figure">
+<img alt="../_images/11.png" src="../_images/11.png" />
+</div>
+<p>With previous infrastructure, Carol has had issues with newly created VM networks not working as expected, and has had to engage in lengthy troubleshooting sessions with her network admin counterpart to identify the source of the issue. With AHV, Carol is easily able to visualize the complete network path of the virtual machine she has provisioned.</p>
+</li>
+<li><p class="first">Try it yourself by selecting the <strong>Network</strong> page from the <strong>Prism Element</strong> drop down menu and filtering by VLAN or VM name.</p>
+<div class="figure">
+<img alt="../_images/13.png" src="../_images/13.png" />
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="enabling-user-self-service">
+<h2>Enabling User Self Service<a class="headerlink" href="#enabling-user-self-service" title="Permalink to this headline">¶</a></h2>
+<p>While Prism and <code class="docutils literal notranslate"><span class="pre">acli</span></code> provide simple workflows for creating VMs, Carol is regularly inundated with these requests and would love to focus more of her time on modernizing other parts of her organization’s aging infrastructure, and attending her son’s soccer games.</p>
+<p>In the following exercises, Carol is going to up her Private Cloud game and bring IaaS self-service to her users leveraging native capabilities in <strong>Prism Central</strong>.</p>
+<ol class="arabic">
+<li><p class="first">Return to the <strong>Home</strong> page of <strong>Prism Element</strong>.</p>
+</li>
+<li><p class="first">Access <strong>Prism Central</strong> by clicking the <strong>Launch</strong> button and logging in with the following credentials:</p>
+<ul class="simple">
+<li><strong>User Name</strong> - admin</li>
+<li><strong>Password</strong> - <em>HPOC Password</em></li>
+</ul>
+<div class="figure">
+<img alt="../_images/6.png" src="../_images/6.png" />
+</div>
+</li>
+</ol>
+<div class="section" id="exploring-categories">
+<h3>Exploring Categories<a class="headerlink" href="#exploring-categories" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>Category</strong> is a key value pair. Categories are assigned to entities (such as VMs, Networks, or Images) based on some criteria (Location, Production-level, App Name, etc.). Policies can then be mapped to those entities that are assigned a specific category value.</p>
+<p>For example, you might have a Department category that includes values such as Engineering, Finance, and HR. In this case you could create one backup policy that applies to Engineering and HR and a separate (more stringent) backup policy that applies to just Finance. Categories allow you to implement a variety of policies across entity groups, and Prism Central allows you to quickly view any established relationships.</p>
+<p>In this exercise you’ll create a custom category for Carol to help align access to the proper resources for the Fiesta app team.</p>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism Central</strong>, select <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; Categories</strong>.</p>
+<div class="figure">
+<img alt="../_images/14.png" src="../_images/14.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>New Category</strong> and fill out the following fields:</p>
+<ul class="simple">
+<li><strong>Name</strong> - <em>Initials</em>-Team</li>
+<li><strong>Purpose</strong> - Allowing resource access based on Application Team</li>
+<li><strong>Values</strong> - Fiesta</li>
+</ul>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+<li><p class="first">Click on the existing <strong>Environment</strong> category and note the available values. <strong>Environment</strong> is a <strong>SYSTEM</strong> category, and while you can add additional values, you cannot modify or delete the Category or any of its out of the box values.</p>
+<div class="figure">
+<img alt="../_images/16.png" src="../_images/16.png" />
+</div>
+</li>
+<li><p class="first">Select <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; VMs</strong>.</p>
+</li>
+<li><p class="first">Using the checkboxes, select the <strong>AutoAD</strong>, and <strong>NTNX-BootcampFS-1</strong> VMs and click <strong>Actions &gt; Manage Categories</strong>.</p>
+<div class="figure">
+<img alt="../_images/17.png" src="../_images/17.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Depending on the number of participants, some of the VMs you need to select could be on another page. You may either search for the VM in question, click to view additional pages and select the VM, or choose to show additional rows. Any of these techniques can be accomplished at the upper right hand portion of the interface.</p>
+</div>
+</li>
+<li><p class="first">In the search bar, begin typing <strong>Environment</strong> and select the <strong>Production</strong> value, then click on the plus sign.</p>
+<div class="figure">
+<img alt="../_images/18.png" src="../_images/18.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For categories tied to Security, Protection, or Recovery policies, related policies will appear in this window to show the impact of applying a Category to an entity.</p>
+</div>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+<li><p class="first">Select the <em>Initials</em><strong>-WinToolsVM</strong> provisioned by Carol in the previous exercise, and click <strong>Actions &gt; Manage Categories</strong>. Assign the <em>Initials</em><strong>-Team: Fiesta</strong> category, click the plus sign and then <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="exploring-roles">
+<h3>Exploring Roles<a class="headerlink" href="#exploring-roles" title="Permalink to this headline">¶</a></h3>
+<p>By default, Prism Central ships with several Roles that map to common user personas. Roles define what actions a user can perform, and are mapped to categories or other entities.</p>
+<p>Carol needs to support two types of users working on the Fiesta team, developers who need to provision VMs for test environments, and operators who monitor multiple environments within the organization, but who have very limited capabilities to modify each environment.</p>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism Central</strong>, select <em class="fa fa-bars"></em> <strong>&gt; Administration &gt; Roles</strong>.</p>
+<p>The built-in Developer role allows users to create and modify VMs, create, provision, and manage Calm Blueprints, and more.</p>
+</li>
+<li><p class="first">Click on the built-in <strong>Developer</strong> role and optionally review the approved actions for the role. Click <strong>Manage Assignment</strong>.</p>
+<div class="figure">
+<img alt="../_images/19.png" src="../_images/19.png" />
+</div>
+</li>
+<li><p class="first">Under <strong>Users and Groups</strong>, specify the <strong>SSP Developers</strong> User Group which should be automatically discovered from the NTNXLAB.local domain.</p>
+</li>
+<li><p class="first">Under <strong>Entities</strong>, use the drop down menu to specify the following resources:</p>
+<ul class="simple">
+<li><strong>AHV Cluster</strong> - <em>Your Assigned Cluster</em></li>
+<li><strong>AHV Subnet</strong> - Secondary</li>
+<li><strong>Category</strong> - Environment:Testing, Environment:Staging, Environment:Dev, <em>Initials</em>-Team:Fiesta</li>
+</ul>
+<div class="figure">
+<img alt="../_images/20.png" src="../_images/20.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Save</strong> and then close this screen by clicking on the X at the top right.</p>
+<p>The default Operator roll includes the ability to delete VMs and applications deployed from Blueprints, which isn’t desired in our environment. Rather than building a new role from scratch, we can clone to existing role and modify to suit our needs. The desired operator role should be able to view VM metrics, perform power operations, and update VM configurations such as vCPU or memory to address application performance issues.</p>
+</li>
+<li><p class="first">Click the built-in <strong>Operator</strong> role and click <strong>Duplicate</strong>.</p>
+</li>
+<li><p class="first">Fill out the following fields and click <strong>Save</strong> to create your custom role:</p>
+<ul class="simple">
+<li><strong>Role Name</strong> - <em>Initials</em>-SmoothOperator</li>
+<li><strong>Description</strong> - Limited operator accounts</li>
+<li><strong>App</strong> - No Access</li>
+<li><strong>VM</strong> - Edit Access</li>
+<li>Do <strong>NOT</strong> select <strong>Allow VM Creation</strong></li>
+</ul>
+<div class="figure">
+<img alt="../_images/21.png" src="../_images/21.png" />
+</div>
+</li>
+<li><p class="first">Refresh <strong>Prism</strong> and click on your <strong>SmoothOperator</strong> role. Click <strong>Manage Assignment</strong>.</p>
+</li>
+<li><p class="first">Create the following assignment:</p>
+<ul class="simple">
+<li><strong>Users and Groups</strong> - operator01</li>
+<li><strong>Entity Categories</strong> - Environment:Production, Environment:Testing, Environment:Staging, Environment:Dev</li>
+</ul>
+<p>Operator01 is a user who has access to all VMs tagged with any of the Environment categories, but lacks generic access to specific clusters.</p>
+<p>Click <strong>New Users</strong> to add an additional assignment to the same role:</p>
+<ul class="simple">
+<li><strong>Users and Groups</strong> - operator02</li>
+<li><strong>Entity Categories</strong> - Environment:Dev, <em>Initials</em>-Team:Fiesta</li>
+</ul>
+<p>Operator02 is a user who sees all VMs tagged with either the Dev or Fiesta category values.</p>
+<div class="figure">
+<img alt="../_images/22.png" src="../_images/22.png" />
+</div>
+<p>Click <strong>Save</strong>.</p>
+</li>
+<li><p class="first">For infrastructure administrators such as Carol, you can map AD users to the <strong>Prism Admin</strong> or <strong>Super Admin</strong> roles through selecting <em class="fa fa-bars"></em> <strong>&gt; Prism Central Settings &gt; Role Mapping</strong> and adding a new <strong>Cluster Admin</strong> or <strong>User Admin</strong> mapping to AD accounts.</p>
+<div class="figure">
+<img alt="../_images/28.png" src="../_images/28.png" />
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="exploring-projects">
+<h3>Exploring Projects<a class="headerlink" href="#exploring-projects" title="Permalink to this headline">¶</a></h3>
+<p>The previous exercises are sufficient to provide basic VM creation self-service to Carol’s users, but much of their work involves applications that consist of multiple VMs. Manual deployment of multiple VMs for a single development, testing, or staging environment is slow and subject to inconsistency and user error. To provide a better experience for her users, Carol will introduce Nutanix Calm into the environment.</p>
+<p>Nutanix Calm allows you to build, provision, and manage your applications across both private (AHV, ESXi) and public cloud (AWS, Azure, GCP) infrastructure.</p>
+<p>In order for non-infrastructure administrators to access Calm, allowing them to create or manage applications, users or groups must first be assigned to a <strong>Project</strong>, which acts as a logical container to define user roles, infrastructure resources, and resource quotas. Projects define a set users with a common set of requirements or a common structure and function, such as a team of engineers collaborating on the Fiesta project.</p>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism Central</strong>, select <em class="fa fa-bars"></em> <strong>&gt; Services &gt; Calm</strong>.</p>
+</li>
+<li><p class="first">Select <strong>Projects</strong> from the lefthand menu and click <strong>+ Create Project</strong>.</p>
+<div class="figure">
+<img alt="../_images/23.png" src="../_images/23.png" />
+</div>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Adding the User/Group mappings before adding the Infrastructure can cause adding the Infrastructure to fail. To avoid this, add the Infrastructure before the User/Group mappings.</p>
+</div>
+<ul>
+<li><p class="first"><strong>Project Name</strong> - <em>Initials</em>-FiestaProject</p>
+</li>
+<li><p class="first">Under <strong>Infrastructure</strong>, select <strong>Select Provider &gt; Nutanix</strong></p>
+</li>
+<li><p class="first">Click <strong>Select Clusters &amp; Subnets</strong></p>
+</li>
+<li><p class="first">Select <em>Your Assigned Cluster</em></p>
+</li>
+<li><p class="first">Under <strong>Subnets</strong>, select <strong>Primary</strong>, <strong>Secondary</strong>, and click <strong>Confirm</strong></p>
+</li>
+<li><p class="first">Mark <em>Primary</em> as the default network by clicking the <em class="fa fa-star"></em></p>
+</li>
+<li><p class="first">Under <strong>Users, Groups, and Roles</strong>, select <strong>+ User</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Name</strong> - SSP Developers</li>
+<li><strong>Role</strong> - Developer</li>
+<li><strong>Action</strong> - Save</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Select <strong>+ User</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Name</strong> - Operator02</li>
+<li><strong>Role</strong> - <em>Initials</em>-SmoothOperator</li>
+<li><strong>Action</strong> - Save</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Under <strong>Quotas</strong>, specify</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>vCPUs</strong> - 100</li>
+<li><strong>Storage</strong> - &lt;Leave Blank&gt;</li>
+<li><strong>Memory</strong> - 100</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="figure">
+<img alt="../_images/24.png" src="../_images/24.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Save &amp; Configure Environment</strong>.</p>
+</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">will</span> <span class="pre">redirect</span> <span class="pre">you</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">Envrionments</span> <span class="pre">page,</span> <span class="pre">but</span> <span class="pre">there</span> <span class="pre">is</span> <span class="pre">nothing</span> <span class="pre">needed</span> <span class="pre">to</span> <span class="pre">configure</span> <span class="pre">here.</span> <span class="pre">Move</span> <span class="pre">onto</span> <span class="pre">the</span> <span class="pre">next</span> <span class="pre">step.</span></code></p>
+<p>Note that only <strong>Operator02</strong> was given access to the <strong>Calm</strong> project, rather than all Operator accounts.</p>
+</div>
+<div class="section" id="staging-blueprints">
+<h3>Staging Blueprints<a class="headerlink" href="#staging-blueprints" title="Permalink to this headline">¶</a></h3>
+<p>A Blueprint is the framework for every application that you model by using Nutanix Calm. Blueprints are templates that describe all the steps that are required to provision, configure, and execute tasks on the services and applications that are created. A Blueprint also defines the lifecycle of an application and its underlying infrastructure, starting from the creation of the application to the actions that are carried out on a application (updating software, scaling out, etc.) until the termination of the application.</p>
+<p>You can use Blueprints to model applications of various complexities; from simply provisioning a single virtual machine to provisioning and managing a multi-node, multi-tier application.</p>
+<p>While developer users will have the ability to create and publish their own Blueprints, Carol wants to provide a common Fiesta Blueprint used by the team.</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="https://raw.githubusercontent.com/nutanixworkshops/ts2020/master/pc/dayinlife/Fiesta-Multi.json">Download the Fiesta-Multi Blueprint by right-clicking here</a>.</p>
+</li>
+<li><p class="first">From <strong>Prism Central &gt; Calm</strong>, select <strong>Blueprints</strong> from the lefthand menu and click <strong>Upload Blueprint</strong>.</p>
+<div class="figure">
+<img alt="../_images/25.png" src="../_images/25.png" />
+</div>
+</li>
+<li><p class="first">Select <strong>Fiesta-Multi.json</strong>.</p>
+</li>
+<li><p class="first">Update the <strong>Blueprint Name</strong> to include your initials. Even across different projects, Calm Blueprint names must be unique.</p>
+</li>
+<li><p class="first">Select your Calm project and click <strong>Upload</strong>.</p>
+<div class="figure">
+<img alt="../_images/26.png" src="../_images/26.png" />
+</div>
+</li>
+<li><p class="first">In order to launch the Blueprint you must first assign a network to the VM. Select the <strong>NodeReact</strong> Service, and in the <strong>VM</strong> Configuration menu on the right, select <strong>Primary</strong> as the <strong>NIC 1</strong> network.</p>
+</li>
+<li><p class="first">Specify the <em>Initials</em><strong>-Team: Fiesta</strong> and <strong>Environment: Dev</strong> categories for the <strong>NodeReact</strong> Service.</p>
+<div class="figure">
+<img alt="../_images/27.png" src="../_images/27.png" />
+</div>
+</li>
+<li><p class="first">Repeat the <strong>NIC 1</strong> and <strong>Category</strong> assignment for the <strong>MySQL</strong> Service.</p>
+</li>
+<li><p class="first">Click <strong>Credentials</strong> to define a private key used to authenticate to the CentOS VM that will be provisioned by the Blueprint.</p>
+<div class="figure">
+<img alt="../_images/27b.png" src="../_images/27b.png" />
+</div>
+</li>
+<li><p class="first">Expand the <strong>CENTOS</strong> credential and use your preferred SSH key, or paste in the following value as the <strong>SSH Private Key</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-----</span><span class="n">BEGIN</span> <span class="n">RSA</span> <span class="n">PRIVATE</span> <span class="n">KEY</span><span class="o">-----</span>
+<span class="n">MIIEowIBAAKCAQEAii7qFDhVadLx5lULAG</span><span class="o">/</span><span class="n">ooCUTA</span><span class="o">/</span><span class="n">ATSmXbArs</span><span class="o">+</span><span class="n">GdHxbUWd</span><span class="o">/</span><span class="n">bNG</span>
+<span class="n">ZCXnaQ2L1mSVVGDxfTbSaTJ3En3tVlMtD2RjZPdhqWESCaoj2kXLYSiNDS9qz3SK</span>
+<span class="mi">6</span><span class="n">h822je</span><span class="o">/</span><span class="n">f9O9CzCTrw2XGhnDVwmNraUvO5wmQObCDthTXc72PcBOd6oa4ENsnuY9</span>
+<span class="n">HtiETg29TZXgCYPFXipLBHSZYkBmGgccAeY9dq5ywiywBJLuoSovXkkRJk3cd7Gy</span>
+<span class="n">hCRIwYzqfdgSmiAMYgJLrz</span><span class="o">/</span><span class="n">UuLxatPqXts2D8v1xqR9EPNZNzgd4QHK4of1lqsNR</span>
+<span class="n">uz2SxkwqLcXSw0mGcAL8mIwVpzhPzwmENC5OrwIBJQKCAQB</span><span class="o">++</span><span class="n">q2WCkCmbtByyrAp</span>
+<span class="mi">6</span><span class="n">ktiukjTL6MGGGhjX</span><span class="o">/</span><span class="n">PgYA5IvINX1SvtU0NZnb7FAntiSz7GFrODQyFPQ0jL3bq0</span>
+<span class="n">MrwzRDA6x</span><span class="o">+</span><span class="n">cPzMb</span><span class="o">/</span><span class="mi">7</span><span class="n">RvBEIGdadfFjbAVaMqfAsul5SpBokKFLxU6lDb2CMdhS67c</span>
+<span class="mi">1</span><span class="n">K2Hv0qKLpHL0vAdEZQ2nFAMWETvVMzl0o1dQmyGzA0GTY8VYdCRsUbwNgvFMvBj</span>
+<span class="mi">8</span><span class="n">T</span><span class="o">/</span><span class="n">svzjpASDifa7IXlGaLrXfCH584zt7y</span><span class="o">+</span><span class="n">qjJ05O1G0NFslQ9n2wi7F93N8rHxgl</span>
+<span class="n">JDE4OhfyaDyLL1UdBlBpjYPSUbX7D5NExLggWEVFEwx4JRaK6</span><span class="o">+</span><span class="n">aDdFDKbSBIidHf</span>
+<span class="n">h45NAoGBANjANRKLBtcxmW4foK5ILTuFkOaowqj</span><span class="o">+</span><span class="mi">2</span><span class="n">AIgT1ezCVpErHDFg0bkuvDk</span>
+<span class="n">QVdsAJRX5</span><span class="o">//</span><span class="n">luSO30dI0OWWGjgmIUXD7iej0sjAPJjRAv8ai</span><span class="o">+</span><span class="n">MYyaLfkdqv1Oj5c</span>
+<span class="n">oDC3KjmSdXTuWSYNvarsW</span><span class="o">+</span><span class="n">Uf2v7zlZlWesTnpV6gkZH3tX86iuiZAoGBAKM0mKX0</span>
+<span class="n">EjFkJH65Ym7gIED2CUyuFqq4WsCUD2RakpYZyIBKZGr8MRni3I4z6Hqm</span><span class="o">+</span><span class="n">rxVW6Dj</span>
+<span class="n">uFGQe5GhgPvO23UG1Y6nm0VkYgZq81TraZc</span><span class="o">/</span><span class="n">oMzignSC95w7OsLaLn6qp32Fje1M</span>
+<span class="n">Ez2Yn0T3dDcu1twY8OoDuvWx5LFMJ3NoRJaHAoGBAJ4rZP</span><span class="o">+</span><span class="n">xj17DVElxBo0EPK7k</span>
+<span class="mi">7</span><span class="n">TKygDYhwDjnJSRSN0HfFg0agmQqXucjGuzEbyAkeN1Um9vLU</span><span class="o">+</span><span class="n">xrTHqEyIN</span><span class="o">/</span><span class="n">Jqxk</span>
+<span class="n">hztKxzfTtBhK7M84p7M5iq</span><span class="o">+</span><span class="mi">0</span><span class="n">jfMau8ykdOVHZAB</span><span class="o">/</span><span class="n">odHeXLrnbrr</span><span class="o">/</span><span class="n">gVQsAKw1NdDC</span>
+<span class="n">kPCNXP</span><span class="o">/</span><span class="n">c9JrzB</span><span class="o">+</span><span class="n">c4juEVAoGBAJGPxmp</span><span class="o">/</span><span class="n">vTL4c5OebIxnCAKWP6VBUnyWliFhdYME</span>
+<span class="n">rECvNkjoZ2ZWjKhijVw8Il</span><span class="o">+</span><span class="n">OAjlFNgwJXzP9Z0qJIAMuHa2QeUfhmFKlo4ku9LOF</span>
+<span class="mi">2</span><span class="n">rdUbNJpKD5m</span><span class="o">+</span><span class="n">IRsLX1az4W6zLwPVRHp56WjzFJEfGiRjzMBfOxkMSBSjbLjDm3Z</span>
+<span class="n">iUf7AoGBALjvtjapDwlEa5</span><span class="o">/</span><span class="n">CFvzOVGFq4L</span><span class="o">/</span><span class="n">OJTBEBGx</span><span class="o">/</span><span class="n">SA4HUc3TFTtlY2hvTDPZ</span>
+<span class="n">dQr</span><span class="o">/</span><span class="n">JBzLBUjCOBVuUuH3uW7hGhW</span><span class="o">+</span><span class="n">DnlzrfbfJATaRR8Ht6VU651T</span><span class="o">+</span><span class="n">Gbrr8EqNpCP</span>
+<span class="n">gmznERCNf9Kaxl</span><span class="o">/</span><span class="n">hlyV5dZBe</span><span class="o">/</span><span class="mi">2</span><span class="n">LIK</span><span class="o">+/</span><span class="n">jLGNu9EJLoraaCBFshJKF</span>
+<span class="o">-----</span><span class="n">END</span> <span class="n">RSA</span> <span class="n">PRIVATE</span> <span class="n">KEY</span><span class="o">-----</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Click <strong>Save</strong> and click <strong>Back</strong> once the Blueprint has completed saving.</p>
+<p>Within minutes, Carol has laid the groundwork to provide virtual infrastructure and application self-service directly to her end users.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="developer-workflow">
+<h2>Developer Workflow<a class="headerlink" href="#developer-workflow" title="Permalink to this headline">¶</a></h2>
+<p>Meet Dan. Dan is a member of the Fiesta Engineering team. He’s behind on testing a new feature, as his request to IT to deploy the virtual infrastructure he requires to perform the testing are several days overdue.</p>
+<p>Dan has resorted to deploying VMs outside of the corporate network on his favorite public cloud service, with no security oversight, and putting company IP at risk.</p>
+<p>Carol to the rescue - she encourages Dan to follow the exercise below to allow him to easily deploy resources within the Fiesta project through Prism.</p>
+<ol class="arabic">
+<li><p class="first">Log out of the local <strong>admin</strong> account and log back into <strong>Prism Central</strong> with Dan’s credentials:</p>
+<ul class="simple">
+<li><strong>User Name</strong> - <a class="reference external" href="mailto:devuser01&#37;&#52;&#48;ntnxlab&#46;local">devuser01<span>&#64;</span>ntnxlab<span>&#46;</span>local</a></li>
+<li><strong>Password</strong> - nutanix/4u</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you experience a slow login, try logging in using an Incognito/Private browsing session.</p>
+</div>
+</li>
+<li><p class="first">Select the <em class="fa fa-bars"></em> menu and note that you now have significantly restricted access to the environment.</p>
+</li>
+<li><p class="first">On the <strong>VMs</strong> page, you should already see your <em>Initials</em><strong>-WinToolsVM</strong> as available to be managed by Dan.</p>
+</li>
+<li><p class="first">Click on the VM and note Dan can get basic metrics associated with his VM, as well as control the VM configuration, power operations, and even delete the VM.</p>
+<div class="figure">
+<img alt="../_images/29.png" src="../_images/29.png" />
+</div>
+<p>There are two workflows that could be followed for self-service creation of VMs: Traditional VM creation wizard and Calm. One of Dan’s requirements is a Linux virtual machine that runs multiple tools required as part of his development workflow.</p>
+</li>
+<li><p class="first">Click <strong>Create VM</strong> and fill out the following fields to provision a traditional virtual machine, similar to the manual VM deployment process Carol followed earlier in the lab:</p>
+<ul class="simple">
+<li><strong>Create VM from</strong> - Disk Images</li>
+<li><strong>Select Disk Images</strong> - Linux_ToolsVM.qcow2</li>
+<li><strong>Name</strong> - <em>Initials</em> -LinuxToolsVM</li>
+<li><strong>Target Project</strong> - <em>Initials</em> -FiestaProject</li>
+<li><strong>Network</strong> - Secondary</li>
+<li><strong>Categories</strong> - Envrionment:Dev</li>
+<li>Select <strong>Manually configure CPU and Memory for this VM</strong></li>
+<li><strong>CPU</strong> - 2</li>
+<li><strong>Cores Per CPU</strong> - 1</li>
+<li><strong>Memory</strong> - 4 GiB</li>
+</ul>
+</li>
+<li><p class="first">Click <strong>Save</strong> and note the VM is immediately powered on following creation.</p>
+<p>In addition to the tools VM, Dan also desires to deploy infrastructure that can be used to test new builds of the Fiesta application. Having end users deploy multi-tier applications through single-VM provisioning and manual integration is slow, inconsistent, and doesn’t result in high user satisfaction - luckily we can leverage the pre-created Blueprint for Fiesta staged to our project by Carol.</p>
+</li>
+<li><p class="first">Select <em class="fa fa-bars"></em> <strong>&gt; Services &gt; Calm</strong>.</p>
+</li>
+<li><p class="first">Select <strong>Blueprints</strong> from the left hand menu and open the <strong>Fiesta-Multi</strong> Blueprint.</p>
+<div class="figure">
+<img alt="../_images/30.png" src="../_images/30.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you’re unfamiliar with Calm Blueprints, take a moment to explore the following key components of the <strong>Fiesta-Multi</strong> Blueprint:</p>
+<ul class="last">
+<li><p class="first">Select either the <strong>NodeReact</strong> or <strong>MySQL</strong> service and review the <strong>VM</strong> configuration in the configuration pane on the right hand of the screen.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/31.png" src="../_images/31.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Select the <strong>Package</strong> tab and click <strong>Configure Install</strong> to view the installation tasks for the selected service. These are the scripts and actions associated with the configuration of each Service or VM.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/32.png" src="../_images/32.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Under <strong>Application Profile</strong>, select <strong>AHV</strong> and view the variables defined for the Blueprint. Variables allow for runtime customization and can also be used on a per application profile basis to build a single application Blueprint that allows you to provision an application to multiple environments, including AHV, ESXi, AWS, GCP, and Azure.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/33.png" src="../_images/33.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Select the <strong>Create</strong> Action under <strong>Application Profile</strong> to visualize dependencies between services. Dependencies can be defined explicitly, but depending on assignment of variables Calm will also identify implicit dependencies. In this Blueprint, you see the web tier installation process will not begin until the MySQL database is running.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/34.png" src="../_images/34.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Click <strong>Credentials</strong> in the toolbar at the top of the Blueprint Editor and expand the existing <strong>CENTOS</strong> credential. Blueprints can contain multiple credentials which can be used to authenticate to VMs to execute scripts, or securely pass credentials directly into scripts.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/35.png" src="../_images/35.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Click <strong>Back</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li><p class="first">Click <strong>Launch</strong> to provision an instance of the Blueprint.</p>
+<div class="figure">
+<img alt="../_images/36.png" src="../_images/36.png" />
+</div>
+</li>
+<li><p class="first">Fill out the following fields and click <strong>Create</strong>:</p>
+<ul class="simple">
+<li><strong>Name of of the Application</strong> - <em>Initials</em> -FiestaMySQL</li>
+<li><strong>db_password</strong> - nutanix/4u</li>
+</ul>
+<div class="figure">
+<img alt="../_images/37.png" src="../_images/37.png" />
+</div>
+</li>
+<li><p class="first">Select the <strong>Audit</strong> tab to monitor the deployment of the Fiesta development environment. Complete provisioning of the app should take approximately 5 minutes.</p>
+<div class="figure">
+<img alt="../_images/38.png" src="../_images/38.png" />
+</div>
+</li>
+<li><p class="first">While the application is provisioning, open <em class="fa fa-bars"></em> <strong>&gt; Administration &gt; Projects</strong> and select your project.</p>
+</li>
+<li><p class="first">Review the <strong>Summary</strong>, <strong>Usage</strong>, <strong>VMs</strong>, and <strong>Users</strong> tabs to see what type of data is made available to users. These breakouts make it easy to understand on a per project, vm, or user level, what resources are being consumed.</p>
+<div class="figure">
+<img alt="../_images/39.png" src="../_images/39.png" />
+</div>
+</li>
+<li><p class="first">Return to <strong>Calm &gt; Applications &gt;</strong> <em>Initials</em><strong>-FiestaMySQL</strong> and wait for the application to move from <strong>Provisioning</strong> to <strong>Running</strong>. Select the <strong>Services</strong> tab and select the <strong>NodeReact</strong> Service to obtain the IP of the web tier.</p>
+<div class="figure">
+<img alt="../_images/40.png" src="../_images/40.png" />
+</div>
+</li>
+<li><p class="first">Open http://&lt;<em>NodeReact-VM-IP</em>&gt; in a new browser tab and validate the app is running.</p>
+<div class="figure">
+<img alt="../_images/41.png" src="../_images/41.png" />
+</div>
+<p>Instead of filing tickets and waiting days, Dan was able to get his test environment up and running before lunch. Instead of drowning his sorrows in Ben &amp; Jerry’s tonight, Dan is going to go to the gym, and eat vegetables with his dinner. Go, Dan!</p>
+</li>
+</ol>
+</div>
+<div class="section" id="operator-workflows">
+<h2>Operator Workflows<a class="headerlink" href="#operator-workflows" title="Permalink to this headline">¶</a></h2>
+<p>Meet Ronald and Elise. Ronald works as a Level 3 engineering with the corporate IT helpdesk, and Elise works as a QA intern on the Fiesta team. In the brief exercise below you will explore and contrast their levels of access based on the roles defined and categories assigned by Carol.</p>
+<ol class="arabic">
+<li><p class="first">Log out of the <strong>devuser01</strong> account and log back into <strong>Prism Central</strong> with Ronald’s credentials:</p>
+<ul class="simple">
+<li><strong>User Name</strong> - <a class="reference external" href="mailto:operator01&#37;&#52;&#48;ntnxlab&#46;local">operator01<span>&#64;</span>ntnxlab<span>&#46;</span>local</a></li>
+<li><strong>Password</strong> - nutanix/4u</li>
+</ul>
+</li>
+<li><p class="first">As expected, all VMs with <strong>Environment</strong> category values assigned are available. Note that you have no ability to <strong>Create</strong> or <strong>Delete</strong> VMs, but the abilities to power manage and change VM configurations are present.</p>
+<p>What else can be accessed by this user? Is Calm available?</p>
+<div class="figure">
+<img alt="../_images/42.png" src="../_images/42.png" />
+</div>
+</li>
+<li><p class="first">Log out of the <strong>operator01</strong> account and log back into <strong>Prism Central</strong> with Elise’s credentials:</p>
+<ul class="simple">
+<li><strong>User Name</strong> - <a class="reference external" href="mailto:operator02&#37;&#52;&#48;ntnxlab&#46;local">operator02<span>&#64;</span>ntnxlab<span>&#46;</span>local</a></li>
+<li><strong>Password</strong> - nutanix/4u</li>
+</ul>
+</li>
+<li><p class="first">Note that only resources tagged with the <em>Initials</em><strong>-Team: Fiesta</strong> category are available to be managed.</p>
+<div class="figure">
+<img alt="../_images/43.png" src="../_images/43.png" />
+</div>
+</li>
+<li><p class="first">Elise receives an alert that memory utilization is high on the <strong>nodereact</strong> VM. Update the configuration to increase memory and power cycle the VM.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="using-entity-browser-search-and-analysis">
+<h2>Using Entity Browser, Search, and Analysis<a class="headerlink" href="#using-entity-browser-search-and-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Now that Carol has freed up time to focus on replacing additional legacy infrastructure, it is important for her to understand how a large, diverse environment can all be managed and monitored via Prism Central. In the exercise below you will explore common workflows for working with entities across multiple clusters in a Nutanix environment.</p>
+<ol class="arabic">
+<li><p class="first">Log out of the <strong>operator02</strong> account and log back into <strong>Prism Central</strong> with Carol’s AD credentials:</p>
+<ul class="simple">
+<li><strong>User Name</strong> - <a class="reference external" href="mailto:adminuser01&#37;&#52;&#48;ntnxlab&#46;local">adminuser01<span>&#64;</span>ntnxlab<span>&#46;</span>local</a></li>
+<li><strong>Password</strong> - nutanix/4u</li>
+</ul>
+</li>
+<li><p class="first">Open <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; VMs</strong>. Prism Central’s <strong>Entity Browser</strong> provides a robust UI for sorting, searching, and viewing entities such as VMs, Images, Clusters, Hosts, Alerts, and more!</p>
+</li>
+<li><p class="first">Select <strong>Filters</strong> and explore the available options. Specify the following example filters, and verify the corresponding box is checked:</p>
+<ul class="simple">
+<li><strong>Name</strong> - Contains <em>Initials</em></li>
+<li><strong>Categories</strong> - <em>Initials</em>-Team: Fiesta</li>
+<li><strong>Hypervisor</strong> - AHV</li>
+<li><strong>Power State</strong> - On</li>
+</ul>
+<p>Take notice of other helpful filters available such as VM efficiency, memory usage, and storage latency.</p>
+</li>
+<li><p class="first">Select all of the filtered VMs and click the <strong>Label</strong> icon to apply a custom label to your group of filtered VMs (e.g. <em>Initials</em> AHV Fiesta VMs).</p>
+<div class="figure">
+<img alt="../_images/44.png" src="../_images/44.png" />
+</div>
+</li>
+<li><p class="first">Clear all filters and select your new label to quickly return to your previously identified VMs. Labels provide an additional means of taxonomy for entities, without tying them to specific policies as is with categories.</p>
+<div class="figure">
+<img alt="../_images/45.png" src="../_images/45.png" />
+</div>
+</li>
+<li><p class="first">Select the <strong>Focus</strong> dropdown to access different out of box views. Which view should be used to understand if your VMs are included as part of a DR plan?</p>
+</li>
+<li><p class="first">Click <strong>Focus &gt; + Add Custom</strong> to create a VM view (e.g. <em>XYZ-VM-View</em>) that displays <strong>CPU Usage</strong>, <strong>CPU Ready Time</strong>, <strong>IO Latency</strong>, <strong>Working Set Size Read</strong>, and <strong>Working Set Size Write</strong>. Such a view could be used to helping to spot VM performance problems.</p>
+<div class="figure">
+<img alt="../_images/46.png" src="../_images/46.png" />
+</div>
+</li>
+<li><p class="first">To fully appreciate the power of Prism Central for searching, sorting, and analyzing entities, view the following brief video:</p>
+<center><iframe width="640" height="360" src="https://www.youtube.com/embed/HXWCExTlXm4?rel=0&amp;showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></li>
+</ol>
+</div>
+<div class="section" id="improved-life-cycle-management">
+<h2>Improved Life Cycle Management<a class="headerlink" href="#improved-life-cycle-management" title="Permalink to this headline">¶</a></h2>
+<p>While not a daily activity, Carol previously dedicated as much as 40% of her time planning and executing software and firmware updates to legacy infrastructure, leaving little time for innovation. In her Nutanix environments, Carol is leveraging the rules engine and rich automation in Lifecycle Manager (LCM) to take the hassle out of planning and applying her infrastructure software updates.</p>
+<p>Unfortunately in a shared cluster environment, you’re not able to test LCM directly. To become more familiar with LCM’s capabilities and ease of use, click through each of the interactive demos available below.</p>
+<div class="section" id="prism-element-lcm-interactive-demo">
+<h3>5.11 Prism Element LCM Interactive Demo<a class="headerlink" href="#prism-element-lcm-interactive-demo" title="Permalink to this headline">¶</a></h3>
+<div class="figure">
+<a class="reference external image-reference" href="https://demo-captures.s3-us-west-1.amazonaws.com/pe-5.11-lcm/story.html"><img alt="Prism Element 5.11 LCM Interactive Demo" src="https://demo-captures.s3-us-west-1.amazonaws.com/pe-5.11-lcm/story_content/thumbnail.jpg" /></a>
+</div>
+</div>
+<div class="section" id="prism-central-lcm-interactive-demo">
+<h3>5.11 Prism Central LCM Interactive Demo<a class="headerlink" href="#prism-central-lcm-interactive-demo" title="Permalink to this headline">¶</a></h3>
+<div class="figure">
+<a class="reference external image-reference" href="https://demo-captures.s3-us-west-1.amazonaws.com/pc-5.11-lcm/story.html"><img alt="Prism Central 5.11 LCM Interactive Demo" src="https://demo-captures.s3-us-west-1.amazonaws.com/pc-5.11-lcm/story_content/thumbnail.jpg" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>In under 2 hours, we’ve shown you how Prism delivers a frictionless experience for virtual infrastructure administrators when it comes to deploying storage, networks, and workloads, monitoring the environment, and updating software. You’ve seen how native Prism Central capabilities, combined with Active Directory, can be used to control access and enable self-service for non-administrator personas. Additionally you enabled rich application automation capabilities for your Private Cloud through Nutanix Calm.</p>
+<p>Private Clouds aren’t built on IaaS, self-service, and application automation alone, however. In the upcoming labs, you will see how Nutanix has built on its foundation to provide advanced monitoring and operations capabilities through its additional <strong>Prism Pro</strong> features, consolidate storage technologies with <strong>Files</strong>, native microsegmentation with <strong>Flow</strong>, and more!</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/dayinlife/dayinlife.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2020 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

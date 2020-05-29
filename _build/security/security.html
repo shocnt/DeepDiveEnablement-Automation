@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Platform Security</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Consolidating Storage with Files" href="../files/files.html" />
+    <link rel="prev" title="Right-sizing VMs with Prism Ops" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Enterprise Private Cloud</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dayinlife/dayinlife.html">A Day in the Life</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#configuring-storage">Configuring Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#provisioning-a-new-network">Provisioning a New Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#responding-to-vm-creation-requests">Responding to VM Creation Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#enabling-user-self-service">Enabling User Self Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#exploring-categories">Exploring Categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#exploring-roles">Exploring Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#exploring-projects">Exploring Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#staging-blueprints">Staging Blueprints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#developer-workflow">Developer Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#operator-workflows">Operator Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#using-entity-browser-search-and-analysis">Using Entity Browser, Search, and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#improved-life-cycle-management">Improved Life Cycle Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#prism-element-lcm-interactive-demo">5.11 Prism Element LCM Interactive Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#prism-central-lcm-interactive-demo">5.11 Prism Central LCM Interactive Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html">Prism Ops Capacity Runway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#capacity-planning-runway-monitoring">Capacity Planning Runway Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#capacity-planning-runway-analysis">Capacity Planning Runway Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#automate-capacity-forecast-report-generation-with-x-play">Automate Capacity Forecast Report Generation with X-Play</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html">Right-sizing VMs with Prism Ops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#inefficiency-detection-with-prism-ops-x-fit">Inefficiency Detection with Prism Ops X-FIT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#automatically-increase-constrained-vm-memory-with-x-play">Automatically Increase Constrained VM Memory with X-Play</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Platform Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-nutanix-stigs">Working with Nutanix STIGS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-stig-report">Running a STIG Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analyzing-the-stig-report">Analyzing the STIG Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compromising-the-environment">Compromising the Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-1">Example 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-2">Example 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-based-encryption">Software Based Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#audit-logs">Audit Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vm-secure-boot">VM Secure Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#takeaways">Takeaways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../files/files.html">Consolidating Storage with Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#managing-smb-shares">Managing SMB Shares</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#creating-the-share">Creating the Share</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#testing-the-share">Testing the Share</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#file-analytics">File Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#using-nfs-exports">Using NFS Exports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#enabling-nfs-protocol">Enabling NFS Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#creating-the-export">Creating the Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#testing-the-export">Testing the Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#multi-protocol-shares">Multi-Protocol Shares</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#configure-user-mappings">Configure User Mappings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../files/files.html#id1">Testing the Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../files/files.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html">Securing Applications with Flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#securing-the-fiesta-application">Securing the Fiesta Application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#defining-category-values">Defining Category Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#creating-a-security-policy">Creating a Security Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#assigning-category-values">Assigning Category Values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#monitoring-and-applying-a-security-policy">Monitoring and Applying a Security Policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#testing-the-application">Testing the Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#using-flow-visualization">Using Flow Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#applying-flow-policies">Applying Flow Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/windows_tools_vm.html">Windows Tools VM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/windows_tools_vm.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/windows_tools_vm.html#deploying-tools-vm">Deploying Tools VM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/linux_tools_vm.html">Linux Tools VM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#deploying-centos">Deploying CentOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#installing-tools">Installing Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#configuring-ntp">Configuring NTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#disabling-firewall-and-selinux">Disabling Firewall and SELinux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#installing-python">Installing Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/glossary.html#nutanix-core">Nutanix Core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#aos">AOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#pulse">Pulse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#prism-element">Prism Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#prism-central">Prism Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#node">Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#block">Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#storage-pool">Storage Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#storage-container">Storage Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#anatomy-of-a-read-i-o">Anatomy of a Read I/O</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#anatomy-of-a-write-i-o">Anatomy of a Write I/O</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/glossary.html#nutanix-flow">Nutanix flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#application-security-policy">Application Security Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#isolation-environment-policy">Isolation Environment Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#quarantine-policy">Quarantine Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#apptier">AppTier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#apptype">AppType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#environment">Environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Enterprise Private Cloud</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dayinlife/dayinlife.html">A Day in the Life</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html">Prism Ops Capacity Runway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html">Right-sizing VMs with Prism Ops</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Platform Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-nutanix-stigs">Working with Nutanix STIGS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-stig-report">Running a STIG Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analyzing-the-stig-report">Analyzing the STIG Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compromising-the-environment">Compromising the Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-1">Example 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-2">Example 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-based-encryption">Software Based Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#audit-logs">Audit Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vm-secure-boot">VM Secure Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#takeaways">Takeaways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../files/files.html">Consolidating Storage with Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html">Securing Applications with Flow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/windows_tools_vm.html">Windows Tools VM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/linux_tools_vm.html">Linux Tools VM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/glossary.html">Glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="platform-security">
+<span id="platformmsecurity"></span><h1>Platform Security<a class="headerlink" href="#platform-security" title="Permalink to this headline">¶</a></h1>
+<p>At Nutanix, security is a first-class citizen that drives best practices providing both defense in depth and a hardened by default posture for releases. In efforts to stay agile and effective when fighting the ever-increasing cyber security threads, Nutanix’s Security Development Life Cycle addresses security at every step of the development process instead of applying it at the end as an afterthought. This includes automated security testing during development and threat modeling to assess and mitigate customer risk from code changes.</p>
+<p>Nutanix provides additional platform security capabilities, including:</p>
+<ul class="simple">
+<li>Security Technical Implementation Guide (STIG) Automation</li>
+<li>Software-based Data-at-Rest Encryption with integrated KMS</li>
+<li>Prism Audit Logs</li>
+<li>VM Secure Boot</li>
+</ul>
+<div class="section" id="working-with-nutanix-stigs">
+<h2>Working with Nutanix STIGS<a class="headerlink" href="#working-with-nutanix-stigs" title="Permalink to this headline">¶</a></h2>
+<p>Nutanix also provides administrators with Security Technical Implementation Guides (STIGs), which are security tools encoded in a machine-readable format to facilitate automated validation, ongoing monitoring, and self-remediation. These reduce the time required to verify security compliance from weeks or months to days without slowing down product evolution. STIGs are based on well-established standards by National Institute of Standards and Technology (NIST) that can apply to multiple baseline requirements for DoD and PCI-DSS. However, Nutanix STIGs are specific to the Acropolis platform and therefore more effective.</p>
+<p>In this lab you will see STIGs in action in order to see first-hand how they harden the Nutanix Enterprise Cloud OS and help reduce zero-day vulnerabilities.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Nutanix AOS and AHV STIGs can be downloaded <a class="reference external" href="https://portal.nutanix.com/#/page/static/stigs">here</a> from the Nutanix Portal.</p>
+</div>
+</div></blockquote>
+<div class="section" id="running-a-stig-report">
+<h3>Running a STIG Report<a class="headerlink" href="#running-a-stig-report" title="Permalink to this headline">¶</a></h3>
+<p>Follow the exercise below to manually run a STIG report on your Nutanix cluster. By default, these checks run on a Nutanix cluster once every 24 hours, whereas in a typical legacy infrastructure environment, STIGs would be applied manually at the time of deployment and have no automated means of ensuring the original configuration is unchanged over time.</p>
+<ol class="arabic">
+<li><p class="first">Connect to Controller VM (CVM) as nutanix user via SSH (Using Terminal, putty, or similar program)</p>
+</li>
+<li><p class="first">Change to the root directory of the CVM</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /
+</pre></div>
+</div>
+</li>
+<li><p class="first">List the files available to the root user to execute within the /root directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root ls -l root
+
+You should see a similar output:
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nutanix@NTNX-14SX35100046-A-CVM:10.21.71.29:~# sudo -u root ls -l root
+total <span class="m">248</span>
+-rw-------. <span class="m">1</span> root root   <span class="m">3314</span> Sep <span class="m">11</span>  <span class="m">2017</span> anaconda-ks.cfg
+drwxr-x---. <span class="m">2</span> root root   <span class="m">4096</span> Dec <span class="m">13</span> <span class="m">23</span>:04 filesystems
+-rw-r-----. <span class="m">1</span> root root   <span class="m">1132</span> May  <span class="m">3</span>  <span class="m">2018</span> homeaudit.pp
+-rw-r-----. <span class="m">1</span> root root   <span class="m">1231</span> May  <span class="m">3</span>  <span class="m">2018</span> my-runcon.pp
+-rw-r-----. <span class="m">1</span> root root    <span class="m">464</span> May  <span class="m">3</span>  <span class="m">2018</span> my-runcon.te
+-rw-------. <span class="m">1</span> root root   <span class="m">3222</span> Sep <span class="m">11</span>  <span class="m">2017</span> original-ks.cfg
+-rwxr-x---. <span class="m">1</span> root root  <span class="m">10034</span> May  <span class="m">3</span>  <span class="m">2018</span> report_open_jre8_stig.sh
+-rwx------. <span class="m">1</span> root root <span class="m">132760</span> Aug <span class="m">30</span> <span class="m">23</span>:50 report_stig.sh
+-rwxr-x---. <span class="m">1</span> root root  <span class="m">72376</span> May  <span class="m">3</span>  <span class="m">2018</span> report_web_stig.sh
+drwxr-x---. <span class="m">2</span> root root   <span class="m">4096</span> Dec <span class="m">13</span> <span class="m">23</span>:17 sretools
+-rw-r-----. <span class="m">1</span> root root    <span class="m">840</span> May  <span class="m">3</span>  <span class="m">2018</span> sshdlocal.pp
+</pre></div>
+</div>
+<p>There should be three .sh files that end in _stig.sh and you’ll want to run the one that outputs the report in the format you prefer.</p>
+</li>
+<li><p class="first">In this example, we’ll run the generic text output “report_stig.sh”</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root /root/report_stig.sh
+
+The output will go into the root user log folder.
+
+.. note::
+
+  The <span class="nb">command</span> will take ~1 minute to complete.
+</pre></div>
+</div>
+</li>
+<li><p class="first">List the files in the folder and note the name of the report.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root ls -l /home/log <span class="p">|</span> grep STIG
+</pre></div>
+</div>
+</li>
+<li><p class="first">Copy the report to the nutanix home directory, substituting the actual file name for the asterisks.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root cp /home/log/STIG-report-**-**-****-**-**-** /home/nutanix
+</pre></div>
+</div>
+</li>
+<li><p class="first">List the files in the /home/nutanix folder.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -l ~
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the owner of the report file to be the Nutanix user, substituting the actual file name for the asterisks.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root chown nutanix:nutanix /home/nutanix/STIG-report-**-**-****-**-**-**
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use a secure copy tool (SCP, WINSCP, PSCP, etc) to copy the report results file to your workstation from the CVM. Alternatively you can open and view the text file in your SSH session using <code class="docutils literal notranslate"><span class="pre">vi</span></code>, <code class="docutils literal notranslate"><span class="pre">more</span></code>, <code class="docutils literal notranslate"><span class="pre">cat</span></code>, etc.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Be sure to login to the CVM using the <strong>nutanix</strong> username and browse to its home directory to find the file we created above.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="analyzing-the-stig-report">
+<h3>Analyzing the STIG Report<a class="headerlink" href="#analyzing-the-stig-report" title="Permalink to this headline">¶</a></h3>
+<p>The STIG report can be used for validation and accreditation requirements for security compliance.</p>
+<p>The format of each result within the report is as follows:</p>
+<ul class="simple">
+<li><strong>Line 1</strong> - Check name</li>
+<li><strong>Line 2</strong> - Description of the check</li>
+<li><strong>Line 3</strong> - Legend, or expected result of the check</li>
+<li><strong>Line 4</strong> - Check result</li>
+<li><strong>Line 5</strong> - Completion status of the check</li>
+</ul>
+<p>Below is an example of a non-finding in the STIG report, meaning that the check did not discover an unwanted configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CAT</span> <span class="n">II</span> <span class="n">RHEL</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">021030</span> <span class="n">SRG</span><span class="o">-</span><span class="n">OS</span><span class="o">-</span><span class="mi">000480</span><span class="o">-</span><span class="n">GPOS</span><span class="o">-</span><span class="mi">00227</span> <span class="n">CCI</span><span class="o">-</span><span class="mi">000366</span> <span class="n">CM</span><span class="o">-</span><span class="mi">5</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">All</span> <span class="n">world</span><span class="o">-</span><span class="n">writable</span> <span class="n">directories</span> <span class="n">must</span> <span class="n">be</span> <span class="n">group</span><span class="o">-</span><span class="n">owned</span> <span class="n">by</span> <span class="n">root</span><span class="p">,</span> <span class="n">sys</span><span class="p">,</span> <span class="nb">bin</span><span class="p">,</span> <span class="ow">or</span> <span class="n">an</span> <span class="n">application</span> <span class="n">group</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">check</span> <span class="n">should</span> <span class="n">be</span> <span class="n">yes</span><span class="o">.</span>  <span class="n">If</span> <span class="n">no</span><span class="p">,</span> <span class="n">then</span> <span class="n">it</span><span class="s1">&#39;s a finding</span>
+<span class="n">yes</span>
+<span class="n">Completed</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>And an example of a finding, where the check was found to have an unwanted configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CAT</span> <span class="n">I</span> <span class="n">RHEL</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">021710</span> <span class="n">SRG</span><span class="o">-</span><span class="n">OS</span><span class="o">-</span><span class="mi">000095</span><span class="o">-</span><span class="n">GPOS</span><span class="o">-</span><span class="mi">00049</span> <span class="n">CCI</span><span class="o">-</span><span class="mi">000381</span> <span class="n">CM</span><span class="o">-</span><span class="mi">7</span> <span class="n">a</span><span class="p">,</span> <span class="n">CM</span><span class="o">-</span><span class="mi">7</span> <span class="n">b</span>
+<span class="n">The</span> <span class="n">telnet</span><span class="o">-</span><span class="n">server</span> <span class="n">package</span> <span class="n">must</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">installed</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">check</span> <span class="n">should</span> <span class="n">be</span> <span class="n">yes</span><span class="o">.</span>  <span class="n">If</span> <span class="n">no</span><span class="p">,</span> <span class="n">then</span> <span class="n">it</span><span class="s1">&#39;s a finding</span>
+<span class="n">no</span>
+<span class="n">Completed</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compromising-the-environment">
+<h3>Compromising the Environment<a class="headerlink" href="#compromising-the-environment" title="Permalink to this headline">¶</a></h3>
+<p>In this final exercise you will embrace your inner dark side and compromise the security of the cluster by making non-compliant changes - and you would have gotten away with it too, if it weren’t for you pesky STIGs (<em>any Scooby Doo fans in the audience? No? OK just me then, fine.</em>).</p>
+<div class="section" id="example-1">
+<h4>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">The following text was extracted from one of the security checks under the AOS STIGs:</p>
+<ul class="simple">
+<li><strong>Rule Version (STIG-ID)</strong>: NTNX-51-000034</li>
+<li><strong>Rule Title</strong>: The /etc/shadow file must be group-owned by root.</li>
+<li><strong>Fix Text</strong>: salt-call state.sls security/CVM/fdpermsownerCVM</li>
+</ul>
+<p>In a Linux OS, secure user data, specifically encrypted passwords, are stored in the /etc/shadow file - making it a bad idea to provide non-root users with access to this sensitive file.</p>
+</li>
+<li><p class="first">Change to the root directory of the CVM</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verify the current ownership:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root ls -l etc/shadow
+----------. <span class="m">1</span> root root <span class="m">943</span> Dec <span class="m">18</span> <span class="m">15</span>:37 /etc/shadow
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the group ownership to <strong>nutanix</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root chown root:nutanix /etc/shadow
+ls -l /etc/shadow
+----------. <span class="m">1</span> root nutanix <span class="m">943</span> Dec <span class="m">18</span> <span class="m">15</span>:37 /etc/shadow
+</pre></div>
+</div>
+</li>
+<li><p class="first">Manually run the salt call to fix this vulnerability:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root salt-call state.sls security/CVM/fdpermsownerCVM
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">While the calls to remediate the identified issues are made manually in this lab, all STIG related automation takes place once every 24 hours by default.</p>
+</div>
+</li>
+<li><p class="first">Verify the file is once again owned by the <strong>root</strong> group and not <strong>nutanix</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root ls -l etc/shadow
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="example-2">
+<h4>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h4>
+<p>This example focuses on the following check from the previously created report:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">world</span><span class="o">-</span><span class="n">writable</span> <span class="n">directories</span> <span class="n">must</span> <span class="n">be</span> <span class="n">group</span><span class="o">-</span><span class="n">owned</span> <span class="n">by</span> <span class="n">root</span><span class="p">,</span> <span class="n">sys</span><span class="p">,</span> <span class="nb">bin</span><span class="p">,</span> <span class="ow">or</span> <span class="n">an</span> <span class="n">application</span> <span class="n">group</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">check</span> <span class="n">should</span> <span class="n">be</span> <span class="n">yes</span><span class="o">.</span>  <span class="n">If</span> <span class="n">no</span><span class="p">,</span> <span class="n">then</span> <span class="n">it</span><span class="s1">&#39;s a finding</span>
+<span class="n">yes</span>
+<span class="n">Completed</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>If a world-writable directory, such as <strong>/tmp</strong>, were taken over by a bad actor, it could impact system operations and compromise security.</p>
+<ol class="arabic">
+<li><p class="first">Change to the root directory of the CVM</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /
+</pre></div>
+</div>
+</li>
+<li><p class="first">You can search for this specific report from the CVM console where the report was run and using the following command, substituting the actual file name for the asterisks:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root grep -A <span class="m">4</span> -B <span class="m">1</span> <span class="s2">&quot;All world-writable directories &quot;</span> /home/log/STIG-report-**-**-****-**-**-**
+</pre></div>
+</div>
+</li>
+<li><p class="first">Observe that the output matches the beginning of the example. Let’s compromise the system so that this check says “no” and then manually fix the issue.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If there is currently a finding for this check, another user may be in the middle of this exercise. You may still proceed.</p>
+</div>
+</li>
+<li><p class="first">Verify the current ownership:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root ls -l / <span class="p">|</span> grep  tmp
+drwxrwxrwt.  <span class="m">14</span> root root  <span class="m">1024</span> Dec <span class="m">21</span> <span class="m">02</span>:59 tmp
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the group ownership:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root chown root:nutanix /tmp
+</pre></div>
+</div>
+</li>
+<li><p class="first">Verify the ownership change:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root ls -l / <span class="p">|</span> grep  tmp
+drwxrwxrwt.  <span class="m">14</span> root nutanix  <span class="m">1024</span> Dec <span class="m">21</span> <span class="m">03</span>:16 tmp
+</pre></div>
+</div>
+</li>
+<li><p class="first">After we have achieved this, let’s re-run the report to see if this change has been detected</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root /root/report_stig.sh
+sudo -u root grep -A <span class="m">4</span> -B <span class="m">1</span> <span class="s2">&quot;All world-writable directories &quot;</span> /home/log/STIG-report-**-**-****-**-**-**
+</pre></div>
+</div>
+</li>
+<li><p class="first">Observe the result of the check is now <strong>no</strong>, indicating a finding.</p>
+</li>
+<li><p class="first">Manually run the salt call to fix this vulnerability:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root salt-call state.sls security/CVM/fdpermsownerCVM
+</pre></div>
+</div>
+</li>
+<li><p class="first">List the / directory again and note that the ‘compromise’ has been reverted back. Optionally you can re-run the report and verify there is no longer a finding for the check.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo -u root ls -l / <span class="p">|</span> grep  tmp
+drwxrwxrwt.  <span class="m">14</span> root root  <span class="m">1024</span> Dec <span class="m">21</span> <span class="m">03</span>:42 tmp
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="software-based-encryption">
+<h2>Software Based Encryption<a class="headerlink" href="#software-based-encryption" title="Permalink to this headline">¶</a></h2>
+<p>Data at Rest Encryption is a critical platform security capability:</p>
+<ul class="simple">
+<li>Ensures that user data does not leave data centers via failed disk drives</li>
+<li>Protects at-rest data against drive theft</li>
+<li>Required for compliance in many Federal, Healthcare, Financial, and Legal environments</li>
+</ul>
+<p>Nutanix provides a number of different options for delivering Data at Rest Encryption.</p>
+<div class="figure">
+<img alt="../_images/110.png" src="../_images/110.png" />
+</div>
+<p>Software-based encryption with Nutanix’s integrated key management service (KMS) can provide a frictionless experience for enabling encryption without impacting performance.</p>
+<div class="figure">
+<img alt="../_images/212.png" src="../_images/212.png" />
+</div>
+<p>Enabling software-based encryption is a one time operation at a per cluster level, so cannot be performed in a shared, lab environment. However, the brief, narrated video below walks you through the few steps required to enable this feature.</p>
+<center><iframe width="640" height="360" src="https://www.youtube.com/embed/-6fIL3FJjN8?rel=0&amp;showinfo=0&amp;t=53" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></div>
+<div class="section" id="audit-logs">
+<h2>Audit Logs<a class="headerlink" href="#audit-logs" title="Permalink to this headline">¶</a></h2>
+<p>System auditing is not only a good practice but often a security compliance requirement. Getting the history of changes or accesses made to a system (files, directories, system resources and system calls) into a service which can present those logs in a legible format is something your customers are going to want to do, and most likely within the first week of deploying their Nutanix cluster.</p>
+<p>Nutanix can forward detailed system events to a syslog server in a few short minutes. In this narrated video you will learn what audit logs are available, where to configure a syslog server and what actions you can take to troubleshoot common problems.</p>
+<center><iframe width="640" height="360" src="https://www.youtube.com/embed/YuhC5nWd5Is?rel=0&amp;showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></div>
+<div class="section" id="vm-secure-boot">
+<h2>VM Secure Boot<a class="headerlink" href="#vm-secure-boot" title="Permalink to this headline">¶</a></h2>
+<p>New in AOS 5.16, Secure Boot for user VMs is a security feature in which AHV checks that the guest OS boot loader is signed with a cryptographic key authorized by a database contained in the UEFI firmware, verifying and trusting the integrity of the OS boot loader.</p>
+<div class="figure">
+<img alt="../_images/313.png" src="../_images/313.png" />
+</div>
+<p>In 5.16, Secure Boot is not yet available through the Prism interface. In this brief, narrated video you will learn how to enable this feature for a VM using <code class="docutils literal notranslate"><span class="pre">acli</span></code>.</p>
+<center><iframe width="640" height="360" src="https://www.youtube.com/embed/dRs5QpFke2U?rel=0&amp;showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></div>
+<div class="section" id="takeaways">
+<h2>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Nutanix is committed to providing a secure platform out of the box, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Automated application and remediation of STIGs</li>
+<li>Multiple options for providing Data at Rest Encryption, including a simple to enable software-based option</li>
+<li>Audit logging, including the ability to ship system and Flow logs to an external syslog server</li>
+<li>Trusted boot technology for guest VMs running on AHV</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/security/security.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2020 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

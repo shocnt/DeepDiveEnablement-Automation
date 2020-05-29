@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Files</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Securing Applications with Flow" href="../flow_secure_fiesta/flow_secure_fiesta.html" />
+    <link rel="prev" title="Platform Security" href="../security/security.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Enterprise Private Cloud</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dayinlife/dayinlife.html">A Day in the Life</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#configuring-storage">Configuring Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#provisioning-a-new-network">Provisioning a New Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#responding-to-vm-creation-requests">Responding to VM Creation Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#enabling-user-self-service">Enabling User Self Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#exploring-categories">Exploring Categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#exploring-roles">Exploring Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#exploring-projects">Exploring Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#staging-blueprints">Staging Blueprints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#developer-workflow">Developer Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#operator-workflows">Operator Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#using-entity-browser-search-and-analysis">Using Entity Browser, Search, and Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#improved-life-cycle-management">Improved Life Cycle Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#prism-element-lcm-interactive-demo">5.11 Prism Element LCM Interactive Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dayinlife/dayinlife.html#prism-central-lcm-interactive-demo">5.11 Prism Central LCM Interactive Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dayinlife/dayinlife.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html">Prism Ops Capacity Runway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#capacity-planning-runway-monitoring">Capacity Planning Runway Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#capacity-planning-runway-analysis">Capacity Planning Runway Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#automate-capacity-forecast-report-generation-with-x-play">Automate Capacity Forecast Report Generation with X-Play</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html">Right-sizing VMs with Prism Ops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#inefficiency-detection-with-prism-ops-x-fit">Inefficiency Detection with Prism Ops X-FIT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#automatically-increase-constrained-vm-memory-with-x-play">Automatically Increase Constrained VM Memory with X-Play</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../security/security.html">Platform Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#working-with-nutanix-stigs">Working with Nutanix STIGS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../security/security.html#running-a-stig-report">Running a STIG Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../security/security.html#analyzing-the-stig-report">Analyzing the STIG Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../security/security.html#compromising-the-environment">Compromising the Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../security/security.html#example-1">Example 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../security/security.html#example-2">Example 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#software-based-encryption">Software Based Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#audit-logs">Audit Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#vm-secure-boot">VM Secure Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/security.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Consolidating Storage with Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#managing-smb-shares">Managing SMB Shares</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-share">Creating the Share</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-the-share">Testing the Share</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#file-analytics">File Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-nfs-exports">Using NFS Exports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-nfs-protocol">Enabling NFS Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-export">Creating the Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-the-export">Testing the Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-protocol-shares">Multi-Protocol Shares</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configure-user-mappings">Configure User Mappings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Testing the Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#takeaways">Takeaways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html">Securing Applications with Flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#securing-the-fiesta-application">Securing the Fiesta Application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#defining-category-values">Defining Category Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#creating-a-security-policy">Creating a Security Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#assigning-category-values">Assigning Category Values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#monitoring-and-applying-a-security-policy">Monitoring and Applying a Security Policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#testing-the-application">Testing the Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#using-flow-visualization">Using Flow Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#applying-flow-policies">Applying Flow Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/windows_tools_vm.html">Windows Tools VM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/windows_tools_vm.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/windows_tools_vm.html#deploying-tools-vm">Deploying Tools VM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/linux_tools_vm.html">Linux Tools VM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#deploying-centos">Deploying CentOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#installing-tools">Installing Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#configuring-ntp">Configuring NTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#disabling-firewall-and-selinux">Disabling Firewall and SELinux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tools_vms/linux_tools_vm.html#installing-python">Installing Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/glossary.html#nutanix-core">Nutanix Core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#aos">AOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#pulse">Pulse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#prism-element">Prism Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#prism-central">Prism Central</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#node">Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#block">Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#storage-pool">Storage Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#storage-container">Storage Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#anatomy-of-a-read-i-o">Anatomy of a Read I/O</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#anatomy-of-a-write-i-o">Anatomy of a Write I/O</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/glossary.html#nutanix-flow">Nutanix flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#application-security-policy">Application Security Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#isolation-environment-policy">Isolation Environment Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#quarantine-policy">Quarantine Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#apptier">AppTier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#apptype">AppType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../appendix/glossary.html#environment">Environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Enterprise Private Cloud</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dayinlife/dayinlife.html">A Day in the Life</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_capacity_lab/prismops_capacity_lab.html">Prism Ops Capacity Runway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prismops/prismops_rightsize_lab/prismops_rightsize_lab.html">Right-sizing VMs with Prism Ops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security/security.html">Platform Security</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Consolidating Storage with Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#managing-smb-shares">Managing SMB Shares</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-share">Creating the Share</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-the-share">Testing the Share</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#file-analytics">File Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-nfs-exports">Using NFS Exports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-nfs-protocol">Enabling NFS Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-export">Creating the Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-the-export">Testing the Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-protocol-shares">Multi-Protocol Shares</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configure-user-mappings">Configure User Mappings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Testing the Export</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#takeaways">Takeaways</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../flow_secure_fiesta/flow_secure_fiesta.html">Securing Applications with Flow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/windows_tools_vm.html">Windows Tools VM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools_vms/linux_tools_vm.html">Linux Tools VM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/glossary.html">Glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="consolidating-storage-with-files">
+<h1>Consolidating Storage with Files<a class="headerlink" href="#consolidating-storage-with-files" title="Permalink to this headline">¶</a></h1>
+<p><em>The estimated time to complete this lab is 45 minutes.</em></p>
+<p>Traditionally, file storage has been yet another silo within IT, introducing unnecessary complexity and suffering from the same issues of scale and lack of continuous innovation seen in SAN storage. Nutanix believes there is no room for silos in the Enterprise Cloud. By approaching file storage as an app, running in software on top of a proven HCI core, Nutanix Files  delivers high performance, scalability, and rapid innovation through One Click management.</p>
+<p><strong>In this lab you will work with Files to manage SMB shares and NFS exports and explore the new functionality for Files deployments with File Analytics.</strong></p>
+<p>For the purpose of time, and sharing infrastructure resources, a Files cluster has already been provisioned on your cluster. The <strong>BootcampFS</strong> Files is a single node instance, typical <strong>Files</strong> deployments would start with 3 File Server VMs, with the ability to scale up and scale out as required for performance.</p>
+<p><strong>BootcampFS</strong> has been configured to use the <strong>Primary</strong> network to communicate with the backend storage, iSCSI connections from the <strong>CVM</strong> to <strong>Volume Groups</strong>, and the <strong>Secondary</strong> network for communication with clients, Active Directory, anti-virus services, etc.</p>
+<div class="figure">
+<img alt="../_images/15.png" src="../_images/15.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is typically desirable in production environments to deploy Files with dedicated virtual networks for client and storage traffic. When using two networks, Files will, by design, disallow client traffic the storage network, meaning VMs assigned to the primary network will be unable to access shares.</p>
+</div>
+<p>As Files leverages Nutanix Volume Groups for data storage, it can take advantage of the same underlying storage benefits such as compression, erasure coding, snapshots, and replication.</p>
+<p>In <strong>Prism Element &gt; File Server &gt; File Server</strong>, select <strong>BootcampFS</strong> and click <strong>Protect</strong>.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/101.png" src="../_images/101.png" />
+</div>
+</div></blockquote>
+<p>Observe the default Self Service Restore schedules, this feature controls the snapshot schedule for Windows’ Previous Versions functionality. Supporting Windows Previous Versions allows end users to roll back changes to files without engaging storage or backup administrators. Note these local snapshots do not protect the file server cluster from local failures and that replication of the entire file server cluster can be performed to remote Nutanix clusters.</p>
+<div class="section" id="managing-smb-shares">
+<h2>Managing SMB Shares<a class="headerlink" href="#managing-smb-shares" title="Permalink to this headline">¶</a></h2>
+<p>In this exercise you will create and test a SMB share, used to support the unstructured file data needs of a cross-departmental team for the Fiesta application.</p>
+<div class="section" id="creating-the-share">
+<h3>Creating the Share<a class="headerlink" href="#creating-the-share" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism Element &gt; File Server</strong>, click <strong>+ Share/Export</strong>.</p>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<ul class="simple">
+<li><strong>Name</strong> - <em>Initials</em><strong>-FiestaShare</strong></li>
+<li><strong>Description (Optional)</strong> - Fiesta app team share, used by PM, ENG, and MKT</li>
+<li><strong>File Server</strong> - <strong>BootcampFS</strong></li>
+<li><strong>Share Path (Optional)</strong> - Leave blank. This field allows you to specify an existing path in which to create the nested share.</li>
+<li><strong>Max Size (Optional)</strong> - 200GiB</li>
+<li><strong>Select Protocol</strong> - SMB</li>
+</ul>
+<div class="figure">
+<img alt="../_images/210.png" src="../_images/210.png" />
+</div>
+<p>Because this is a single node AOS cluster and therefore a single file server VM, all shares will be <strong>Standard</strong> shares. A Standard share means that all top level directories and files within the share, as well as connections to the share, are served from a single file server VM.</p>
+<p>If this were a three node Files cluster or larger you’d have an option to create a <strong>Distributed</strong> share.  Distributed shares are appropriate for home directories, user profiles, and application folders. This type of share shards top level directories across all Files VMs and load balances connections across all Files VMs within the Files cluster.</p>
+</li>
+<li><p class="first">Click <strong>Next</strong>.</p>
+</li>
+<li><p class="first">Select <strong>Enable Access Based Enumeration</strong> and <strong>Self Service Restore</strong>. Select <strong>Blocked File Types</strong> and enter a comma separated list of extensions like .flv,.mov.</p>
+<div class="figure">
+<img alt="../_images/310.png" src="../_images/310.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Access Based Enumeration (ABE)</strong> ensures that only files and folders which a given user has read access are visible to that user. This is commonly enabled for Windows file shares.</p>
+<p><strong>Self Service Restore</strong> allows users to leverage Windows Previous Version to easily restore individual files to previous revisions based on Nutanix snapshots.</p>
+<p class="last"><strong>Blocked File Types</strong> allow Files administrators to restrict certain types of files (such as large, personal media files) from being written to corporate shares. This can be configured on a per Server or per Share basis, with per Share settings overriding Server wide settings.</p>
+</div>
+</li>
+<li><p class="first">Click <strong>Next</strong>.</p>
+</li>
+<li><p class="first">Review the <strong>Summary</strong> and click <strong>Create</strong>.</p>
+<div class="figure">
+<img alt="../_images/47.png" src="../_images/47.png" />
+</div>
+<p>It is common for shares utilized by many people to leverage quotas to ensure fair use of resources. Files offers the ability to set either soft or hard quotas on a per share basis for either individual users within Active Directory, or specific Active Directory Security Groups.</p>
+</li>
+<li><p class="first">In <strong>Prism Element &gt; File Server &gt; Share/Export</strong>, select your share and click <strong>+ Add Quota Policy</strong>.</p>
+</li>
+<li><p class="first">Fill out the following fields and click <strong>Save</strong>:</p>
+<ul class="simple">
+<li>Select <strong>Group</strong></li>
+<li><strong>User or Group</strong> - SSP Developers</li>
+<li><strong>Quota</strong> - 10 GiB</li>
+<li><strong>Enforcement Type</strong> - Hard Limit</li>
+</ul>
+<div class="figure">
+<img alt="../_images/91.png" src="../_images/91.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="testing-the-share">
+<h3>Testing the Share<a class="headerlink" href="#testing-the-share" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Connect to your <em>Initials</em><strong>-WinTools</strong> VM via VM console as a <strong>non-Administrator NTNXLAB</strong> domain account:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You will not be able to connect using these accounts via RDP.</p>
+</div>
+<ul class="simple">
+<li>user01 - user25</li>
+<li>devuser01 - devuser25</li>
+<li>operator01 - operator25</li>
+<li><strong>Password</strong> nutanix/4u</li>
+</ul>
+<div class="figure">
+<img alt="../_images/161.png" src="../_images/161.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Windows Tools VM has already been joined to the <strong>NTNXLAB.local</strong> domain. You could use any domain joined VM to complete the following steps.</p>
+</div>
+</li>
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">\\BootcampFS.ntnxlab.local\</span></code> in <strong>File Explorer</strong>.</p>
+</li>
+<li><p class="first">Open a browser within your <em>Initials</em><strong>-WinTools</strong> desktop and download sample data to populate in your share:</p>
+<ul class="simple">
+<li><strong>If using a PHX cluster</strong> - <a class="reference external" href="http://10.42.194.11/workshop_staging/peer/SampleData_Small.zip">http://10.42.194.11/workshop_staging/peer/SampleData_Small.zip</a></li>
+<li><strong>If using a RTP cluster</strong> - <a class="reference external" href="http://10.55.251.38/workshop_staging/peer/SampleData_Small.zip">http://10.55.251.38/workshop_staging/peer/SampleData_Small.zip</a></li>
+</ul>
+</li>
+<li><p class="first">Extract the contents of the zip file into your file share.</p>
+<div class="figure">
+<img alt="../_images/51.png" src="../_images/51.png" />
+</div>
+<ul class="simple">
+<li>The <strong>NTNXLAB\Administrator</strong> user was specified as a Files Administrator during deployment of the Files cluster, giving it read/write access to all shares by default.</li>
+<li>Managing access for other users is no different than any other SMB share.</li>
+</ul>
+</li>
+</ol>
+<ol class="arabic">
+<li><p class="first">Open <strong>PowerShell</strong> and try to create a file with a blocked file type by executing the following command:</p>
+<div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="nb">New-Item</span> <span class="p">\\</span><span class="n">BootcampFS</span><span class="p">\</span><span class="n">INITIALS-FiestaShare</span><span class="p">\</span><span class="n">MyFile</span><span class="p">.</span><span class="n">flv</span>
+</pre></div>
+</div>
+<p>Observe that creation of the new file is denied.</p>
+</li>
+<li><p class="first">Return to <strong>Prism Element &gt; File Server &gt; Share/Export</strong>, select your share. Review the <strong>Share Details</strong>, <strong>Usage</strong> and <strong>Performance</strong> tabs to understand the high level information available on a per share basis, including the number of files &amp; connections, storage utilization over time, latency, throughput, and IOPS.</p>
+<div class="figure">
+<img alt="../_images/111.png" src="../_images/111.png" />
+</div>
+<p>In the next exercise, you will see how Files can provide further insights into usage of each File Server and Share.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="file-analytics">
+<h2>File Analytics<a class="headerlink" href="#file-analytics" title="Permalink to this headline">¶</a></h2>
+<p>In this exercise you will explore the new, integrated File Analytics capabilities available in Nutanix Files, including scanning existing shares, creating anomaly alerts, and reviewing audit details. File Analytics is deployed in minutes as a standalone VM through an automated, One Click operation in Prism Element. This VM has already been deployed and enabled in your environment.</p>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism Element &gt; File Server &gt; File Server</strong>, select <strong>BootcampFS</strong> and click <strong>File Analytics</strong>.</p>
+<div class="figure">
+<img alt="../_images/121.png" src="../_images/121.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>File Analytics should already be enabled, but if prompted you will need to provide your Files administrator account, as Analytics will need to be able to scan all shares.</p>
+<ul class="simple">
+<li><strong>Username</strong>: NTNXLAB\administrator</li>
+<li><strong>Password</strong>: nutanix/4u</li>
+</ul>
+<div class="last figure">
+<img alt="../_images/old13.png" src="../_images/old13.png" />
+</div>
+</div>
+</li>
+<li><p class="first">As this is a shared environment, the dashboard will likely already be populated with data from shares created by other users. To scan your newly created share, click <em class="fa fa-gear"></em> <strong>&gt; Scan File System</strong>. Select your share and click <strong>Scan</strong>.</p>
+<div class="figure">
+<img alt="../_images/141.png" src="../_images/141.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If your share is not shown, please give it some time to get populated…</p>
+</div>
+</li>
+<li><p class="first">Close the <strong>Scan File System</strong> window and refresh your browser.</p>
+</li>
+<li><p class="first">You should see the <strong>Data Age</strong>, <strong>File Distribution by Size</strong> and <strong>File Distribution by Type</strong> dashboard panels update.</p>
+<div class="figure">
+<img alt="../_images/151.png" src="../_images/151.png" />
+</div>
+<p>Under….</p>
+</li>
+<li><p class="first">From your <em>Initials</em><strong>-WinTools</strong> VM, create some audit trail activity by opening several of the files under <strong>Sample Data</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You may need to complete a short wizard for OpenOffice if using that application to open a file.</p>
+</div>
+</li>
+<li><p class="first">Refresh the <strong>Dashboard</strong> page in your browser to see the <strong>Top 5 Active Users</strong>, <strong>Top 5 Accessed Files</strong> and <strong>File Operations</strong> panels update.</p>
+<div class="figure">
+<img alt="../_images/171.png" src="../_images/171.png" />
+</div>
+</li>
+<li><p class="first">To access the audit trail for your user account, click on your user under <strong>Top 5 Active Users</strong>.</p>
+<div class="figure">
+<img alt="../_images/17b.png" src="../_images/17b.png" />
+</div>
+</li>
+<li><p class="first">Alternatively, you can select <strong>Audit Trails</strong> from the toolbar and search for your user or a given file.</p>
+<div class="figure">
+<img alt="../_images/181.png" src="../_images/181.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can use wildcards for your search, for example <strong>.doc</strong></p>
+</div>
+</li>
+</ol>
+<p>File Analytics puts simple, yet powerful information in the hands of storage administrators, allowing them to understand and audit both utilization and access within a Nutanix Files environment.</p>
+</div>
+<div class="section" id="using-nfs-exports">
+<h2>Using NFS Exports<a class="headerlink" href="#using-nfs-exports" title="Permalink to this headline">¶</a></h2>
+<p>In this exercise you will create and test a NFSv4 export, used to support clustered applications, store application data such as logging, or storing other unstructured file data commonly accessed by Linux clients.</p>
+<div class="section" id="enabling-nfs-protocol">
+<h3>Enabling NFS Protocol<a class="headerlink" href="#enabling-nfs-protocol" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Enabling NFS protocol only needs to be performed once per Files server, and may have already been completed in your environment. If NFS is already enabled, proceed to <a class="reference internal" href="#configure-user-mappings">Configure User Mappings</a>.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism Element &gt; File Server</strong>, select your file server and click <strong>Protocol Management &gt; Directory Services</strong>.</p>
+<div class="figure">
+<img alt="../_images/291.png" src="../_images/291.png" />
+</div>
+</li>
+<li><p class="first">Select <strong>Use NFS Protocol</strong> with <strong>Unmanaged</strong> User Management and Authentication, and click <strong>Update</strong>.</p>
+<div class="figure">
+<img alt="../_images/301.png" src="../_images/301.png" />
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="creating-the-export">
+<h3>Creating the Export<a class="headerlink" href="#creating-the-export" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism &gt; File Server</strong>, click <strong>+ Share/Export</strong>.</p>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<ul class="simple">
+<li><strong>Name</strong> - logs</li>
+<li><strong>Description (Optional)</strong> - File share for system logs</li>
+<li><strong>File Server</strong> - <em>Initials</em><strong>-Files</strong></li>
+<li><strong>Share Path (Optional)</strong> - Leave blank</li>
+<li><strong>Max Size (Optional)</strong> - Leave blank</li>
+<li><strong>Select Protocol</strong> - NFS</li>
+</ul>
+<div class="figure">
+<img alt="../_images/241.png" src="../_images/241.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Next</strong>.</p>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Select <strong>Enable Self Service Restore</strong></dt>
+<dd><ul class="first last">
+<li>These snapshots appear as a .snapshot directory for NFS clients.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><strong>Authentication</strong> - System</li>
+<li><strong>Default Access (For All Clients)</strong> - No Access</li>
+<li>Select <strong>+ Add exceptions</strong></li>
+<li><strong>Clients with Read-Write Access</strong> - <em>The first 3 octets of your cluster network</em>.* (e.g. 10.38.1.*)</li>
+</ul>
+<div class="figure">
+<img alt="../_images/251.png" src="../_images/251.png" />
+</div>
+<p>By default an NFS export will allow read/write access to any host that mounts the export, but this can be restricted to specific IPs or IP ranges.</p>
+</li>
+<li><p class="first">Click <strong>Next</strong>.</p>
+</li>
+<li><p class="first">Review the <strong>Summary</strong> and click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="testing-the-export">
+<h3>Testing the Export<a class="headerlink" href="#testing-the-export" title="Permalink to this headline">¶</a></h3>
+<p>You will first provision a CentOS VM to use as a client for your Files export.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have already deployed the <a class="reference internal" href="../tools_vms/linux_tools_vm.html#linux-tools-vm"><span class="std std-ref">Linux Tools VM</span></a> as part of another lab, you may use this VM as your NFS client instead.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism &gt; VM &gt; Table</strong>, click <strong>+ Create VM</strong>.</p>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<ul class="simple">
+<li><strong>Name</strong> - <em>Initials</em>-NFS-Client</li>
+<li><strong>Description</strong> - CentOS VM for testing Files NFS export</li>
+<li><strong>vCPU(s)</strong> - 2</li>
+<li><strong>Number of Cores per vCPU</strong> - 1</li>
+<li><strong>Memory</strong> - 2 GiB</li>
+<li><dl class="first docutils">
+<dt>Select <strong>+ Add New Disk</strong></dt>
+<dd><ul class="first last">
+<li><strong>Operation</strong> - Clone from Image Service</li>
+<li><strong>Image</strong> - CentOS</li>
+<li>Select <strong>Add</strong></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Select <strong>Add New NIC</strong></dt>
+<dd><ul class="first last">
+<li><strong>VLAN Name</strong> - Secondary</li>
+<li>Select <strong>Add</strong></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+<li><p class="first">Select the <em>Initials</em><strong>-NFS-Client</strong> VM and click <strong>Power on</strong>.</p>
+</li>
+<li><p class="first">Note the IP address of the VM in Prism, and connect via SSH using the following credentials:</p>
+<ul class="simple">
+<li><strong>Username</strong> - root</li>
+<li><strong>Password</strong> - nutanix/4u</li>
+</ul>
+</li>
+<li><p class="first">Execute the following:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1"># yum install -y nfs-utils #This installs the NFSv4 client</span>
+<span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1"># mkdir /filesmnt</span>
+<span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1"># mount.nfs4 &lt;Intials&gt;-Files.ntnxlab.local:/ /filesmnt/</span>
+<span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1"># df -kh</span>
+Filesystem                      Size  Used Avail Use% Mounted on
+/dev/mapper/centos_centos-root  <span class="m">8</span>.5G  <span class="m">1</span>.7G  <span class="m">6</span>.8G  <span class="m">20</span>% /
+devtmpfs                        <span class="m">1</span>.9G     <span class="m">0</span>  <span class="m">1</span>.9G   <span class="m">0</span>% /dev
+tmpfs                           <span class="m">1</span>.9G     <span class="m">0</span>  <span class="m">1</span>.9G   <span class="m">0</span>% /dev/shm
+tmpfs                           <span class="m">1</span>.9G   17M  <span class="m">1</span>.9G   <span class="m">1</span>% /run
+tmpfs                           <span class="m">1</span>.9G     <span class="m">0</span>  <span class="m">1</span>.9G   <span class="m">0</span>% /sys/fs/cgroup
+/dev/sda1                       494M  141M  353M  <span class="m">29</span>% /boot
+tmpfs                           377M     <span class="m">0</span>  377M   <span class="m">0</span>% /run/user/0
+*intials*-Files.ntnxlab.local:/             <span class="m">1</span>.0T  <span class="m">7</span>.0M  <span class="m">1</span>.0T   <span class="m">1</span>% /afsmnt
+<span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1"># ls -l /filesmnt/</span>
+total <span class="m">1</span>
+drwxrwxrwx. <span class="m">2</span> root root <span class="m">2</span> Mar  <span class="m">9</span> <span class="m">18</span>:53 logs
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Observe that the <strong>logs</strong> directory is mounted in <code class="docutils literal notranslate"><span class="pre">/filesmnt/logs</span></code>.</p>
+</li>
+<li><p class="first">Reboot the VM and observe the export is no longer mounted. To persist the mount, add it to <code class="docutils literal notranslate"><span class="pre">/etc/fstab</span></code> by executing the following:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;Intials-Files.ntnxlab.local:/ /filesmnt nfs4&#39;</span> &gt;&gt; /etc/fstab
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">The following command will add 100 2MB files filled with random data to <code class="docutils literal notranslate"><span class="pre">/filesmnt/logs</span></code>:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /filesmnt/logs/host1
+<span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..100<span class="o">}</span><span class="p">;</span> <span class="k">do</span> dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">bs</span><span class="o">=</span>8k <span class="nv">count</span><span class="o">=</span><span class="m">256</span> <span class="nv">of</span><span class="o">=</span>/filesmnt/logs/host1/file<span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Return to <strong>Prism &gt; File Server &gt; Share &gt; logs</strong> to monitor performance and usage.</p>
+<p>Note that the utilization data is updated every 10 minutes.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="multi-protocol-shares">
+<h2>Multi-Protocol Shares<a class="headerlink" href="#multi-protocol-shares" title="Permalink to this headline">¶</a></h2>
+<p>Files provides the ability to provision both SMB shares and NFS exports separately - but also now supports the ability to provide multi-protocol access to the same share. In the exercise below, you will configure your existing <em>Initials</em><strong>-FiestaShare</strong> to allow NFS access, allowing developer users to re-direct application logs to this location.</p>
+<div class="section" id="configure-user-mappings">
+<h3>Configure User Mappings<a class="headerlink" href="#configure-user-mappings" title="Permalink to this headline">¶</a></h3>
+<p>A Nutanix Files share has the concept of a native and non-native protocol.  All permissions are applied using the native protocol. Any access requests using the non-native protocol requires a user or group mapping to the permission applied from the native side. There are several ways to apply user and group mappings including rule based, explicit and default mappings.  You will first configure a default mapping.</p>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism Element &gt; File Server</strong>, select your file server and click <strong>Protocol Management &gt; User Mapping</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Next</strong> twice to advance to <strong>Default Mapping</strong>.</p>
+</li>
+<li><p class="first">From the <strong>Default Mapping</strong> page choose both <strong>Deny access to NFS export</strong> and <strong>Deny access to SMB share</strong> as the defaults for when no mapping is found.</p>
+<div class="figure">
+<img alt="../_images/311.png" src="../_images/311.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Next &gt; Save</strong> to complete the default mapping.</p>
+</li>
+<li><p class="first">In <strong>Prism Element &gt; File Server</strong>, select your <em>Initials</em><strong>-FiestaShare</strong> and click <strong>Update</strong>.</p>
+</li>
+<li><p class="first">Under <strong>Basics</strong>, select <strong>Enable multiprotocol access for NFS</strong> and click <strong>Next</strong>.</p>
+<div class="figure">
+<img alt="../_images/321.png" src="../_images/321.png" />
+</div>
+</li>
+<li><p class="first">Under <strong>Settings &gt; Multiprotocol Access</strong> select <strong>Simultaneous access to the same files from both protocols</strong>.</p>
+<div class="figure">
+<img alt="../_images/331.png" src="../_images/331.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Next &gt; Save</strong> to complete updating the share settings.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h3>Testing the Export<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">To test the NFS export, connect via SSH to your <em>Initials</em><strong>-LinuxToolsVM</strong> VM:</p>
+<ul class="simple">
+<li><strong>User Name</strong> - root</li>
+<li><strong>Password</strong> - nutanix/4u</li>
+</ul>
+</li>
+<li><p class="first">Execute the following commands:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1"># yum install -y nfs-utils #This installs the NFSv4 client</span>
+<span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1"># mkdir /filesmulti</span>
+<span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1"># mount.nfs4 bootcampfs.ntnxlab.local:/&lt;Initials&gt;-FiestaShare /filesmulti</span>
+<span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1"># dir /filesmulti</span>
+dir: cannot open directory /filesmulti: Permission denied
+<span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1">#</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The mount operation is case sensitive.</p>
+</div>
+</li>
+</ol>
+<p>Because the default mapping is to deny access the Permission denied error is expected. You will now add an explicit mapping to allow access to the non-native NFS protocol user. We will need to get the user ID (UID) to create the explicit mapping.</p>
+<ol class="arabic">
+<li><p class="first">Execute the following command and take note of the UID:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1"># id</span>
+<span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">groups</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span>
+<span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1">#</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">In <strong>Prism Element &gt; File Server</strong>, select your file server and click <strong>Protocol Management &gt; User Mapping</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Next</strong> to advance to <strong>Explicit Mapping</strong>.</p>
+</li>
+<li><p class="first">Under <strong>One-to-onemapping list</strong>, click <strong>Add manually</strong>.</p>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<ul class="simple">
+<li><strong>SMB Name</strong> - NTNXLAB\devuser01</li>
+<li><strong>NFS ID</strong> - UID from previous step (0 if root)</li>
+<li><strong>User/Group</strong> - User</li>
+</ul>
+<div class="figure">
+<img alt="../_images/341.png" src="../_images/341.png" />
+</div>
+</li>
+<li><p class="first">Under <strong>Actions</strong>, click <strong>Save</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Next &gt; Next &gt; Save</strong> to complete updating your mappings.</p>
+</li>
+<li><p class="first">Return to your <em>Initials</em><strong>-LinuxToolsVM</strong> SSH session and try to access the share again:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1"># dir /filesmulti</span>
+Documents<span class="se">\ </span>-<span class="se">\ </span>Copy  Graphics<span class="se">\ </span>-<span class="se">\ </span>Copy  Pictures<span class="se">\ </span>-<span class="se">\ </span>Copy  Presentations<span class="se">\ </span>-<span class="se">\ </span>Copy  Recordings<span class="se">\ </span>-<span class="se">\ </span>Copy  Technical<span class="se">\ </span>PDFs<span class="se">\ </span>-<span class="se">\ </span>Copy  XYZ-MyFolder
+<span class="o">[</span>root@CentOS ~<span class="o">]</span><span class="c1">#</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">From your SSH session, create a text file and then validate you can access the file from your Windows client.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="takeaways">
+<h2>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">¶</a></h2>
+<p>What are the key things you should know about <strong>Nutanix Files</strong>?</p>
+<ul class="simple">
+<li>Files can be rapidly deployed on top of existing Nutanix clusters, providing SMB and NFS storage for user shares, home directories, departmental shares, applications, and any other general purpose file storage needs.</li>
+<li>Files is not a point solution. VM, File, Block, and Object storage can all be delivered by the same platform using the same management tools, reducing complexity and management silos.</li>
+<li>Files can scale up and scale out with One Click performance optimization.</li>
+<li>File Analytics helps you better understand how data is utilized by your organizations to help you meet your data auditing, data access minimization and compliance requirements.</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/files/files.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2020 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
