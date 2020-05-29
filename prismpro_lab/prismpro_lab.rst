@@ -4,9 +4,9 @@ Prism Pro演習課題1: Prism Pro演習
 
 .. figure:: images/operationstriangle.png
 
-Prism Opsは、お客様のIT運用にスマートな自動化をもたらします。典型的な運用ワークフローは、必要に応じて監視、分析、およびアクションを実行する連続サイクルです。 Prism Opsは、従来のIT管理者のワークフローを反映して、運用効率を向上させます。Prism Opsを使用すると、IT管理者は、機械学習エンジンX-FITおよびX-Play自動化エンジンを使用して、この典型的なフローを自動化できます。
+Prism Proは、お客様のIT運用にスマートな自動化をもたらします。典型的な運用ワークフローは、必要に応じて監視、分析、およびアクションを実行する連続サイクルです。 Prism Proは、従来のIT管理者のワークフローを反映して、運用効率を向上させます。Prism Proを使用すると、IT管理者は、機械学習エンジンX-FITおよびX-Play自動化エンジンを使用して、この典型的なフローを自動化できます。
 
-この演習では、Prism Opsを使用した監視、分析、および自動化の方法を学習します。
+この演習では、Prism Proを使用した監視、分析、および自動化の方法を学習します。
 
 環境について
 +++++++++
@@ -16,7 +16,7 @@ Prism Opsは、お客様のIT運用にスマートな自動化をもたらしま
 演習課題1: ランウェイ機能を利用したキャパシティプランニング
 ++++++++++++++++++++++++++++++++++++++
 
-キャパシティランウェイとは、特定のクラスターまたはノード内のリソース残量の尺度です。 全体的なクラスターのランウェイだけでなく、CPU、メモリ、ストレージ容量の個々の測定値があります。キャパシティランウェイは、Prism OpsのマシンインテリジェンスエンジンであるX-FITを使用して計算されます。
+キャパシティランウェイとは、特定のクラスターまたはノード内のリソース残量の尺度です。 全体的なクラスターのランウェイだけでなく、CPU、メモリ、ストレージ容量の個々の測定値があります。キャパシティランウェイは、Prism ProのマシンインテリジェンスエンジンであるX-FITを使用して計算されます。
 
 #. **Prism Central > オペレーション（Operations） > 計画（Planning） > 容量のランウェイ（Capacity Runway）** と進む。
 
@@ -40,7 +40,7 @@ Prism Opsは、お客様のIT運用にスマートな自動化をもたらしま
 演習課題2: ジャストインタイム計画
 ++++++++++++++++++++++++++++++++++++++
 
-Prism OpsのX-FITエンジンは、将来のワークロードを計画する機能も提供し、新しいワークロードのリソース要件に対応するために追加できるハードウェアを提案します。
+Prism ProのX-FITエンジンは、将来のワークロードを計画する機能も提供し、新しいワークロードのリソース要件に対応するために追加できるハードウェアを提案します。
 
 #. ページ左側にある **リソースの調整（Adjust Resources）** にて、 **はじめに（Get Started）** ボタンをクリックする。※ここで、新しいワークロードの計画を入力し、今後のリソースランウェイを延長する必要があるかどうかを確認できます。
 
@@ -75,7 +75,7 @@ Prism OpsのX-FITエンジンは、将来のワークロードを計画する機
 Prism Pro演習課題3: キャパシティ予測とX-Play
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-次に、キャパシティランウェイが残り少なくなった際にこのレポートを生成するアクションを自動的に実行する方法を体験します。この演習ではPrism Opsのシンプルな自動化エンジンであるX-Playを使用します。
+次に、キャパシティランウェイが残り少なくなった際にこのレポートを生成するアクションを自動的に実行する方法を体験します。この演習ではPrism Proのシンプルな自動化エンジンであるX-Playを使用します。
 
 #. PrismCentralで検索バーを利用して **Playbooks** を検索する。
 
@@ -117,15 +117,15 @@ Prism Pro演習課題3: キャパシティ予測とX-Play
 
    .. figure:: images/cap8.png
 
-#. **保存して閉じる（Save & Close）** をクリックし、 “*Initials* - Automatically Generate Forecast Report” という名前で保存する。 **Enabled** のトグルで有効にしてください。 
+#. **保存して閉じる（Save & Close）** をクリックし、 “*あなたのイニシャル* - Automatically Generate Forecast Report” という名前で保存する。 **Enabled** のトグルで有効にしてください。 
 
    .. figure:: images/cap9.png
 
-#. 演習準備で確認した **http://`<GTSPrismOpsLabUtilityServer_IP_ADDRESS>`/alerts** に移動する。 **Memory Runway is short** のラジオボタンを選択し、 **あなたのイニシャル-LinuxToolsVM** を指定する。 **Simulate Alert** ボタンをクリックし、メモリ制約のアラートをシミュレートする。
+#. 演習準備で確認した **http://`<GTSPrismOpsLabUtilityServer_IP_ADDRESS>`/alerts** に移動する。 **Memory Runway is short** のラジオボタンを選択し、**Simulate Alert** ボタンをクリックしてメモリ制約のアラートをシミュレートする。
 
    .. figure:: images/rs23.png
 
-#. アラートが正常に生成された場合の外観を示します。 “*Initials* - Automatically Generate Forecast Report” Playbookをクリックして開きます。
+#. アラートが正常に生成された場合の外観を示します。 “*あなたのイニシャル* - Automatically Generate Forecast Report” Playbookをクリックして開きます。
 
    .. figure:: images/cap11.png
 
@@ -139,15 +139,14 @@ Prism Pro演習課題3: キャパシティ予測とX-Play
 
 #. また、下図のようなメールが届きます。
 
-   .. figure:: images/cap14.png
-
+   .. figure:: images/cap14.png  
 
 Prism Pro演習課題4: VMライトサイジング
 +++++++++++++++++++++++++++++++++++++++++++
 
-Prism Opsは、X-FIT機械学習を使用して、管理対象クラスター内で実行されているVMの動作を検出および監視します。
+Prism Proは、X-FIT機械学習を使用して、管理対象クラスター内で実行されているVMの動作を検出および監視します。
 
-Prism Opsは、機械学習を使用してデータを分析し、非効率であると学習されたVMに分類を適用します。以下は分類の簡単な説明です。:
+Prism Proは、機械学習を使用してデータを分析し、非効率であると学習されたVMに分類を適用します。以下は分類の簡単な説明です。:
 
 * **Overprovisioned（オーバープロビジョニング）:** 割り当てられたリソースの最小量を使用していると特定されたVM。（余剰リソースが多い）
 * **Inactive（保護無効）:** 一定期間電源がオフになっているVM、またはCPU、メモリ、またはI / Oリソースを消費しないVMを実行しているVM。
@@ -156,11 +155,11 @@ Prism Opsは、機械学習を使用してデータを分析し、非効率で�
 
 #. **Prism Central** にてダッシュボードに移動する。 :fa:`bars` **> Dashboard**
 
-#. ダッシュボードから、仮想マシン効率（VM Efficiency）ウィジェットを確認する。※このウィジェットは、Prism OpsのX-FIT機械学習が検出した非効率的なVMの概要を提供します。ウィジェットの下部にある ‘非効率な仮想マシンをすべて表示（View All Inefficeint VMs）’ リンクをクリックして、詳細を確認します。
+#. ダッシュボードから、仮想マシン効率（VM Efficiency）ウィジェットを確認する。※このウィジェットは、Prism ProのX-FIT機械学習が検出した非効率的なVMの概要を提供します。ウィジェットの下部にある ‘非効率な仮想マシンをすべて表示（View All Inefficeint VMs）’ リンクをクリックして、詳細を確認します。
 
    .. figure:: images/ppro_58.png
 
-#. VMリストビューで、Prism OpsがこれらのVMにフラグを立てた理由の詳細を含む効率性の詳細を表示している。　※[効率の詳細]列のテキストにカーソルを合わせると、詳細な説明を表示できます。
+#. VMリストビューで、Prism ProがこれらのVMにフラグを立てた理由の詳細を含む効率性の詳細を表示している。　※[効率の詳細]列のテキストにカーソルを合わせると、詳細な説明を表示できます。
 
    .. figure:: images/ppro_59.png
 
@@ -171,7 +170,7 @@ Prism Opsは、機械学習を使用してデータを分析し、非効率で�
    * **Automation:** powershellやREST-APIなどの他の自動化方法を使用して、VMのサイズを変更する。
 
 
-   この機械学習データを使用して、Prism OpsはVM、ホスト、およびクラスターメトリックデータのベースライン（予想される範囲）を生成することもできます。X-FITアルゴリズムは、これらのエンティティの通常の動作を学習し、さまざまなチャートのベースライン範囲としてそれを表します。メトリック値がこの予想範囲から逸脱するたびに、Prism Opsは異常として検知します。
+   この機械学習データを使用して、Prism ProはVM、ホスト、およびクラスターメトリックデータのベースライン（予想される範囲）を生成することもできます。X-FITアルゴリズムは、これらのエンティティの通常の動作を学習し、さまざまなチャートのベースライン範囲としてそれを表します。メトリック値がこの予想範囲から逸脱するたびに、Prism Proは異常として検知します。
 
 #. PrismCentralにて ‘bootcamp_good’ を検索し、 ‘bootcamp_good_1’ を確認する。
 
@@ -262,7 +261,7 @@ Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケ�
 
 #. 以下を入力し **コピー（Copy）** をクリックする。　※作成しているアクションは、後でPlaybookからチケット発行させるためのものです。※<GTSPrismOpsLabUtilityServer_IP_ADDRESS>は変数なので、IPアドレスを代入してください。
 
-   - **氏名（Name）:** *Initials* - Service Ticketの作成
+   - **氏名（Name）:** *あなたのイニシャル* - Service Ticketの作成
    - **Method:** POST
    - **URL:** http://<GTSPrismOpsLabUtilityServer_IP_ADDRESS>/generate_ticket/
    - **Request Body:** ``{"vm_name":"{{trigger[0].source_entity_info.name}}","vm_id":"{{trigger[0].source_entity_info.uuid}}","alert_name":"{{trigger[0].alert_entity_info.name}}","alert_id":"{{trigger[0].alert_entity_info.uuid}}"}``
@@ -306,7 +305,7 @@ Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケ�
 
    .. figure:: images/rs13.png
 
-#. **保存して閉じる（Save & Close）** を選択し、名前を “*Initials* - Generate Service Ticket for Constrained VM” と設定する。 **Enabled** トグルで有効にすることを忘れないでください。
+#. **保存して閉じる（Save & Close）** を選択し、名前を “*あなたのイニシャル* - Generate Service Ticket for Constrained VM” と設定する。 **Enabled** トグルで有効にすることを忘れないでください。
 
    .. figure:: images/rs14.png
 
@@ -351,7 +350,7 @@ Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケ�
 
    .. figure:: images/rs21.png
 
-#. **保存して閉じる（Save & Close）** をクリックし、名前は “*Initials* - Resolve Service Ticket” とする。‘Enabled’ トグルで有効化することを忘れないでください。
+#. **保存して閉じる（Save & Close）** をクリックし、名前は “*あなたのイニシャル* - Resolve Service Ticket” とする。‘Enabled’ トグルで有効化することを忘れないでください。
 
    .. figure:: images/rs22.png
 
@@ -371,11 +370,11 @@ Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケ�
 
    .. figure:: images/rs26.png
 
-#. 作成した二つ目のplaybook **`Initials` - Resolve Service Ticket** を選択し、このチケットで実行する。
+#. 作成した二つ目のplaybook **`あなたのイニシャル` - Resolve Service Ticket** を選択し、このチケットで実行する。
 
    .. figure:: images/rs27.png
 
-#. Prism Centralコンソールを開いた状態で前のタブに戻る。 **`Initials` - Resolve Service Ticket** の詳細を開き **プレイ（Plays）** タブを表示することで、このプレイブックで実行された内容を確認できる。
+#. Prism Centralコンソールを開いた状態で前のタブに戻る。 **`あなたのイニシャル` - Resolve Service Ticket** の詳細を開き **プレイ（Plays）** タブを表示することで、このプレイブックで実行された内容を確認できる。
 
    .. figure:: images/rs29.png
 
