@@ -121,7 +121,11 @@ Prism Pro演習課題3: キャパシティ予測とX-Play
 
    .. figure:: images/cap9.png
 
-#. **演習用に用意されたメタデータだけの環境であるため、この環境では実際にこのPlaybookをシミュレートすることはできません。** 代わりに、アラートが正常に生成された場合の外観を示します。 “*Initials* - Automatically Generate Forecast Report” Playbookをクリックして開きます。
+#. 演習準備で確認した **http://`<GTSPrismOpsLabUtilityServer_IP_ADDRESS>`/alerts** に移動する。 **Memory Runway is short** のラジオボタンを選択し、 **あなたのイニシャル-LinuxToolsVM** を指定する。 **Simulate Alert** ボタンをクリックし、メモリ制約のアラートをシミュレートする。
+
+   .. figure:: images/rs23.png
+
+#. アラートが正常に生成された場合の外観を示します。 “*Initials* - Automatically Generate Forecast Report” Playbookをクリックして開きます。
 
    .. figure:: images/cap11.png
 
