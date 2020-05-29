@@ -186,10 +186,10 @@ Prism Opsは、機械学習を使用してデータを分析し、非効率で�
 #. **キャンセル（Cancel）** をクリックし、画面を閉じる。　※キャパシティランウェイの演習と同様の理由により、実際にアラートを生成できる環境ではないため、キャンセルします。
 
 
-Prism Pro演習課題5: VMライトサイジングとX-Play(ボーナス)
+Prism Pro演習課題5: VMライトサイジングとX-Play
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-非効率性の一部を解決するために自動化されたアクションを実行する方法を見てみましょう。このラボでは、このVMのメモリが制限されていると想定し、このVMの適切なサイズ設定を自動的に修正する方法を示します。また、カスタムチケットシステムを使用して、この典型的なワークフローがService Nowなどのチケットシステムとどのように統合できるかを考えます。
+非効率性の一部を解決するために自動化されたアクションを実行する方法を見てみましょう。このラボでは、このVMのメモリが制限されていると想定し、このVMの適切なサイズ設定を自動的に修正する方法を示します。
 
 #. VMリストから **_あなたのイニシャル_-LinuxToolsVM** を確認する。 以降の画面例では、 **ABC - VM** を利用します。
 
@@ -211,7 +211,7 @@ Prism Pro演習課題5: VMライトサイジングとX-Play(ボーナス)
 
    .. figure:: images/rs9.png
 
-#. *VMsを指定（Specify VMs）* のラジオボタンを選択し、 **_Initials_-LinuxToolsVM** を選択する。※このVMで発生したアラートに対して自動対処されることを意味します。
+#. *VMsを指定（Specify VMs）* のラジオボタンを選択し、 **あなたのイニシャル-LinuxToolsVM** を選択する。※このVMで発生したアラートに対して自動対処されることを意味します。
 
    .. figure:: images/rs10.png
 
@@ -219,7 +219,11 @@ Prism Pro演習課題5: VMライトサイジングとX-Play(ボーナス)
 
    .. figure:: images/rs18.png
 
-#. 演習準備で確認した **http://`<GTSPrismOpsLabUtilityServer_IP_ADDRESS>`/alerts** に移動する。 **VM Memory Constrained** のラジオボタンを選択し、 **_Initials_-LinuxToolsVM** を指定する。 **Simulate Alert** ボタンをクリックし、メモリ制約のアラートをシミュレートする。
+#. 以下の画面に従って空のフィールドを設定する。
+
+   .. figure:: images/rs19.png
+
+#. 演習準備で確認した **http://`<GTSPrismOpsLabUtilityServer_IP_ADDRESS>`/alerts** に移動する。 **VM Memory Constrained** のラジオボタンを選択し、 **あなたのイニシャル-LinuxToolsVM** を指定する。 **Simulate Alert** ボタンをクリックし、メモリ制約のアラートをシミュレートする。
 
    .. figure:: images/rs23.png
 
@@ -236,7 +240,7 @@ Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケ�
 
 非効率性の一部を解決するために自動化されたアクションを実行する方法を見てみましょう。このラボでは、このVMのメモリが制限されていると想定し、このVMの適切なサイズ設定を自動的に修正する方法を示します。また、カスタムチケットシステムを使用して、この典型的なワークフローがService Nowなどのチケットシステムとどのように統合できるかを考えます。
 
-#. VMリストから **_Initials_-LinuxToolsVM** を確認する。 以降の画面例では、 **ABC - VM** を利用します。
+#. VMリストから **あなたのイニシャル-LinuxToolsVM** を確認する。 以降の画面例では、 **ABC - VM** を利用します。
 
    .. figure:: images/rs1.png
 
@@ -278,7 +282,7 @@ Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケ�
 
    .. figure:: images/rs9.png
 
-#. *VMsを指定（Specify VMs）* のラジオボタンを選択し、 **_Initials_-LinuxToolsVM** を選択する。※このVMで発生したアラートに対して自動対処されることを意味します。
+#. *VMsを指定（Specify VMs）* のラジオボタンを選択し、 **あなたのイニシャル-LinuxToolsVM** を選択する。※このVMで発生したアラートに対して自動対処されることを意味します。
 
    .. figure:: images/rs10.png
 
@@ -347,7 +351,7 @@ Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケ�
 
    .. figure:: images/rs22.png
 
-#. ワークフローをトリガーする。演習のはじめに開いておいた **/alerts** URL [例 10.42.113.52/alerts] に移動する。 **VM Memory Constrained** のラジオボタンを選択し、 **_Initials_-LinuxToolsVM** を指定する。 **Simulate Alert** ボタンをクリックし、メモリ制約のアラートをシミュレートする。
+#. ワークフローをトリガーする。演習のはじめに開いておいた **/alerts** URL [例 10.42.113.52/alerts] に移動する。 **VM Memory Constrained** のラジオボタンを選択し、 **あなたのイニシャル-LinuxToolsVM** を指定する。 **Simulate Alert** ボタンをクリックし、メモリ制約のアラートをシミュレートする。
 
    .. figure:: images/rs23.png
 
