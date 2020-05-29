@@ -7,7 +7,7 @@ Calm演習準備
 ブループリントのクローン
 ++++++++++++++++++++++++++
 
-#. adminユーザでPrism Centralにログイン、Calmに移動し、ブループリントメニューに遷移します。
+#. adminユーザでPrism Centralにログイン、Calmに移動し、ブループリントメニューに遷移します。Calm演習ではPrism Pro演習とは異なり、通常のPrism Centralを用います。
 
 #. **CENTOS-IPAM-CALMDSL** ブループリントをクローンします。
 

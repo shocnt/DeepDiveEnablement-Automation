@@ -108,4 +108,4 @@ Calm DSL
    .. figure:: images/lab11.png            
    .. figure:: images/lab12.png            
 
-
+#. お願い: 最後に作成したアプリケーションの削除をお願いいたします。
