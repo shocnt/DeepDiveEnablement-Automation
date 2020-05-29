@@ -79,39 +79,33 @@ Calm DSL
 
    .. note::
 
-      # docker run -it ntnx/calm-dsl -> Calm DSLのコンテナイメージからコンテナを起動し、対話型シェルを表示
-      # calm init dsl : Calm DSLの初期設定
-        Prism Central IP []: X.X.X.X -> あなたのPrism Central IPアドレス
-        Port [9440]:  -> デフォルト値を仕様のためEnter
-        Username [admin]: -> デフォルト値を仕様のためEnter
-        Password []: techX2020! -> PCのパスワード
-        Project [default]: BootcampInfra -> プロジェクト名 
-      # calm init bp -> サンプルブループリントをローカル作成
+      - docker run -it ntnx/calm-dsl -> Calm DSLのコンテナイメージからコンテナを起動し、対話型シェルを表示
+      - calm init dsl : Calm DSLの初期設定
+      - Prism Central IP []: X.X.X.X -> あなたのPrism Central IPアドレス
+      - Port [9440]:  -> デフォルト値を仕様のためEnter
+      - Username [admin]: -> デフォルト値を仕様のためEnter
+      - Password []: techX2020! -> PCのパスワード
+      - Project [default]: BootcampInfra -> プロジェクト名 
+      - calm init bp -> サンプルブループリントをローカル作成
 
 #. サンプルブループリントのHelloBlueprintは以下のようなディレクリ構成になっています。それぞれのファイルの中身を確認してみて下さい。
 
-   .. note::
-      
-      HelloBlueprint/
-            |-.local
-                |-keys
-                   |-centos -> 秘密鍵
-                   |-centos_pub -> 公開鍵
-            |-blueprint.py -> ブループリントの中身
-            |-scripts
-                 |-pkg_install_task.sh -> インストール時に実行するスクリプト
-                 |-pkg_uninstall_task.sh -> アンインストール時に実行するスクリプト
-            
+   .. figure:: images/lab10.png            
+
 #. サンプルブループリントをCalmに読み込ませ、アプリケーション起動を行います。
 
    .. note::
 
-      # calm create bp --file HelloBlueprint/blueprint.py --name “あなたのイニシャル”-HelloDSL -> サンプルブループリントをCalm上で作成
-      # calm get bps -> Calm上のブループリントをリスト
-      # calm describe bp “あなたのイニシャル”-HelloDSL -> Calm上のブループリントの詳細表示
-      # calm launch bp “あなたのイニシャル”-HelloDSL --app_name “あなたのイニシャル”-HelloDSL –i -> ブループリントからアプリケーションを起動
-      # calm get apps -> Calm上のアプリケーションをリスト
-      # calm describe app “あなたのイニシャル”-HelloDSL” -> Calm上のアプリケーションの詳細表示
+      - calm create bp --file HelloBlueprint/blueprint.py --name “あなたのイニシャル”-HelloDSL -> サンプルブループリントをCalm上で作成
+      - calm get bps -> Calm上のブループリントをリスト
+      - calm describe bp “あなたのイニシャル”-HelloDSL -> Calm上のブループリントの詳細表示
+      - calm launch bp “あなたのイニシャル”-HelloDSL --app_name “あなたのイニシャル”-HelloDSL –i -> ブループリントからアプリケーションを起動
+      - calm get apps -> Calm上のアプリケーションをリスト
+      - calm describe app “あなたのイニシャル”-HelloDSL” -> Calm上のアプリケーションの詳細表示
 
+#. Calm UIに入り、Calm DSLから行ったブループリントのアップロードとアプリケーション起動が反映されていることを確認します。
+
+   .. figure:: images/lab11.png            
+   .. figure:: images/lab12.png            
 
 

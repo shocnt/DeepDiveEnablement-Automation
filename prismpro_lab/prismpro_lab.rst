@@ -13,7 +13,7 @@ Prism Proは、お客様のIT運用にスマートな自動化をもたらしま
 環境について
 +++++++++
 
-本演習はPrism Pro演習準備のセクションで確認したhttp://`<GTSPrismOpsLabUtilityServer_IP_ADDRESS>`/ のPrismUIを利用して演習を進めます。
+本演習はPrism Pro演習準備のセクションで確認したhttp://<GTSPrismOpsLabUtilityServer_IP_ADDRESS>/ のPrismUIを利用して演習を進めます。
 
 演習課題1: ランウェイ機能を利用したキャパシティプランニング
 ++++++++++++++++++++++++++++++++++++++
@@ -110,8 +110,9 @@ Prism Pro演習課題3: キャパシティ予測とX-Play
 #. 以下を入力する。独自の件名メッセージを作成してください。下記のような「パラメータ」を使用してメッセージを充実させることができます。
 
    - **Recipient:** - メールアドレスを入力
-   - **Subject :** - ``Playbook {{playbook.playbook_name}} が実行されました``
-   - **Message:** - `アラート {{trigger[0].alert_entity_info.name}}が発生し、プレイブック {{playbook.playbook_name}}が実行されました。レポートが添付されます。``
+   - **Subject :** - Playbook {{playbook.playbook_name}} が実行されました
+   - **Message:** - アラート {{trigger[0].alert_entity_info.name}}が発生し、プレイブック {{playbook.playbook_name}}が実行されました。
+   - **Attachment:** - 選択しない。*Report PDFを選択することも出来ますが、SMTPサーバの関係上選択なしでお願いいたします。
 
    .. figure:: images/cap8.png
 
@@ -119,7 +120,7 @@ Prism Pro演習課題3: キャパシティ予測とX-Play
 
    .. figure:: images/cap9.png
 
-#. 演習準備で確認した **http://`<GTSPrismOpsLabUtilityServer_IP_ADDRESS>`/alerts** に移動する。 **Memory Runway is short** のラジオボタンを選択し、**Simulate Alert** ボタンをクリックしてメモリ制約のアラートをシミュレートする。
+#. 演習準備で確認した **http://<GTSPrismOpsLabUtilityServer_IP_ADDRESS>/alerts** に移動する。 **Memory Runway is Short** のラジオボタンを選択し、**Simulate Alert** ボタンをクリックしてメモリ制約のアラートをシミュレートする。
 
    .. figure:: images/rs23.png
 
@@ -139,6 +140,10 @@ Prism Pro演習課題3: キャパシティ予測とX-Play
 
    .. figure:: images/cap14.png  
 
+#. 複数人でクラスターをシェアしているため、他の方がアラートを発報するタイミングであなたのプレイブックが起動してしまいます。プレイブックの削除を確実にお願いします。
+
+   .. figure:: images/cap15.png  
+
 Prism Pro演習課題4: VMライトサイジング
 +++++++++++++++++++++++++++++++++++++++++++
 
@@ -151,9 +156,9 @@ Prism Proは、機械学習を使用してデータを分析し、非効率で�
 * **Constrained（制約あり）:** 追加のリソースでパフォーマンスが向上するVM。（リソース不足）
 * **Bully:** 多くのリソースを使用し、その結果他のVMに影響を与えると特定されたVM。
 
-#. **Prism Central** にてダッシュボードに移動する。 :fa:`bars` **> Dashboard**
+#. http://<GTSPrismOpsLabUtilityServer_IP_ADDRESS>/の **Prism Central** にてダッシュボードに移動する。 :fa:`bars` **> Dashboard**
 
-#. ダッシュボードから、仮想マシン効率（VM Efficiency）ウィジェットを確認する。※このウィジェットは、Prism ProのX-FIT機械学習が検出した非効率的なVMの概要を提供します。ウィジェットの下部にある ‘非効率な仮想マシンをすべて表示（View All Inefficeint VMs）’ リンクをクリックして、詳細を確認します。
+#. ダッシュボードから、仮想マシン効率（VM Efficiency）ウィジェットを確認する。※このウィジェットは、Prism ProのX-FIT機械学習が検出した非効率的なVMの概要を提供します。ウィジェットの下部にある **非効率な仮想マシンをすべて表示（View All Inefficeint VMs）** リンクをクリックして、詳細を確認します。
 
    .. figure:: images/ppro_58.png
 
@@ -200,7 +205,7 @@ Prism Pro演習課題5: VMライトサイジングとX-Play
 
    .. figure:: images/rs2.png
 
-#. Playbookを作成する。上部にある **プレイブックの作成（Create Playbook）** をクリックする。
+#. "Playbook"を検索し、プレイブック画面に遷移したのち、Playbookを作成する。上部にある **プレイブックの作成（Create Playbook）** をクリックする。
 
    .. figure:: images/rs7.png
 
@@ -220,11 +225,11 @@ Prism Pro演習課題5: VMライトサイジングとX-Play
 
    .. figure:: images/rs18.png
 
-#. 以下の画面に従って空のフィールドを設定する。
+#. 以下の画面に従って空のフィールドを設定する。**保存して閉じる（Save & Close）** をクリックし、名前は “*あなたのイニシャル* - Hot Add VM Memory” とする。‘Enabled’ トグルで有効化することを忘れないでください。
 
    .. figure:: images/rs19.png
 
-#. 演習準備で確認した **http://`<GTSPrismOpsLabUtilityServer_IP_ADDRESS>`/alerts** に移動する。 **VM Memory Constrained** のラジオボタンを選択し、 **あなたのイニシャル-LinuxToolsVM** を指定する。 **Simulate Alert** ボタンをクリックし、メモリ制約のアラートをシミュレートする。
+#. 演習準備で確認した **http://<GTSPrismOpsLabUtilityServer_IP_ADDRESS>/alerts** に移動する。 **VM Memory Constrained** のラジオボタンを選択し、 **あなたのイニシャル-LinuxToolsVM** を指定する。 **Simulate Alert** ボタンをクリックし、メモリ制約のアラートをシミュレートする。
 
    .. figure:: images/rs23.png
 
@@ -232,9 +237,9 @@ Prism Pro演習課題5: VMライトサイジングとX-Play
 
    .. figure:: images/rs31.png
 
-#. また、プレイブックが実行されたことを通知するメールを確認する。
+#. 次の演習でもVMのメモリを追加するため、作成したプレイブックの削除を確実にお願いします。
 
-   .. figure:: images/rs32.png
+   .. figure:: images/cap15.png 
 
 Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケットシステム
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
