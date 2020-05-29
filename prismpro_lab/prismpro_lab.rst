@@ -1,5 +1,7 @@
+.. _prismpro_lab:
+
 ------------------------
-Prism Pro演習課題1: Prism Pro演習
+Prism Pro演習
 ------------------------
 
 .. figure:: images/operationstriangle.png
