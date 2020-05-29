@@ -117,7 +117,7 @@ Prism Pro演習課題3: キャパシティ予測とX-Play
 
    .. figure:: images/cap8.png
 
-#. **保存して閉じる（Save & Close）** をクリックし、 “*Initials* - Automatically Generate Forecast Report” という名前で保存する。 ** ‘Enabled’ のトグルで有効にしてください。** 
+#. **保存して閉じる（Save & Close）** をクリックし、 “*Initials* - Automatically Generate Forecast Report” という名前で保存する。 **Enabled** のトグルで有効にしてください。 
 
    .. figure:: images/cap9.png
 
@@ -298,7 +298,7 @@ Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケ�
 
    .. figure:: images/rs13.png
 
-#. **保存して閉じる（Save & Close）** を選択し、名前を “*Initials* - Generate Service Ticket for Constrained VM” と設定する。 **‘Enabled’ トグルで有効にすることを忘れないでください。**
+#. **保存して閉じる（Save & Close）** を選択し、名前を “*Initials* - Generate Service Ticket for Constrained VM” と設定する。 **Enabled** トグルで有効にすることを忘れないでください。
 
    .. figure:: images/rs14.png
 
@@ -343,7 +343,7 @@ Prism Pro演習課題ボーナス: VMライトサイジングとX-Playとチケ�
 
    .. figure:: images/rs21.png
 
-#. **保存して閉じる（Save & Close）** をクリックし、名前は “*Initials* - Resolve Service Ticket” とする。 ** ‘Enabled’ トグルで有効化することを忘れないでください。** 
+#. **保存して閉じる（Save & Close）** をクリックし、名前は “*Initials* - Resolve Service Ticket” とする。‘Enabled’ トグルで有効化することを忘れないでください。
 
    .. figure:: images/rs22.png
 
